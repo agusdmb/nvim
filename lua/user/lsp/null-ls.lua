@@ -19,3 +19,5 @@ null_ls.setup {
     diagnostics.mypy,
   },
 }
+
+vim.api.nvim_set_keymap('n', '<leader>f', ':lua vim.lsp.buf.formatting_sync()<cr>', { noremap = true, silent = true })
