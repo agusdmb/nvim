@@ -1,5 +1,6 @@
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
+  vim.notify("NvimTree not found!", "error")
   return
 end
 
@@ -11,7 +12,7 @@ nvim_tree.setup({
   hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = false,
   ignore_buffer_on_setup = false,
-  open_on_setup = true,
+  open_on_setup = false,
   open_on_setup_file = false,
   open_on_tab = false,
   sort_by = "name",
@@ -117,3 +118,5 @@ nvim_tree.setup({
 })
 
 vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeToggle<cr>", { noremap = true, silent = true })
+
+vim.notify("NvimTree enabled")
