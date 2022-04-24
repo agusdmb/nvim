@@ -1,4 +1,8 @@
-local lint = require('lint')
+local status_ok, lint = pcall(require, "nvim-lint")
+if not status_ok then
+  return
+end
+
 lint.linters_by_ft = {
   python = {'pylint', 'mypy'}
 }
