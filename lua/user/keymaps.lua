@@ -82,5 +82,3 @@ keymap('v', '<leader>y', '"+y', opts)
 keymap('n', '<leader>p', '"+p', opts)
 
 keymap('n', '<leader>', ':nohlsearch<cr>', opts)
-
-keymap('n', '<c-p>', ':Telescope find_files<cr>', opts)
