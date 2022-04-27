@@ -125,6 +125,41 @@ return packer.startup(function(use)
 
   use "rhysd/git-messenger.vim"
 
+  use "bronson/vim-trailing-whitespace"
+
+  use "machakann/vim-highlightedyank"
+
+  use "majutsushi/tagbar"
+
+  use {
+    "petertriho/nvim-scrollbar",
+    config = function()
+      require('scrollbar').setup()
+    end
+  }
+
+  use {
+    "karb94/neoscroll.nvim",
+    config = function()
+      require('neoscroll').setup()
+    end
+  }
+
+  use {
+    'nacro90/numb.nvim',
+    config = function()
+      require('numb').setup()
+    end
+  }
+
+  -- use {
+  --   "folke/which-key.nvim",
+  --   config = function()
+  --     require("which-key").setup {
+  --     }
+  --   end
+  -- }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
