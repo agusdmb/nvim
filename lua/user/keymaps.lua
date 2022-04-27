@@ -82,3 +82,5 @@ keymap('v', '<leader>y', '"+y', opts)
 keymap('n', '<leader>p', '"+p', opts)
 
 keymap('n', '<leader>', ':nohlsearch<cr>', opts)
+
+keymap('n', '<leader>c', ':bd<cr>', opts)
