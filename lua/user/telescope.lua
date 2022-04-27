@@ -20,6 +20,10 @@ telescope.setup({
 -- load_extension, somewhere after setup function:
 require('telescope').load_extension('fzf')
 
-vim.api.nvim_set_keymap('n', '<c-p>', ':Telescope find_files<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>b', ':Telescope buffers initial_mode=normal<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>t', ':Telescope tags<cr>', { noremap = true, silent = true })
+local opts = { noremap = true, silent = true }
+
+vim.api.nvim_set_keymap('n', '<c-p>', ':Telescope find_files<cr>', opts)
+vim.api.nvim_set_keymap('n', '<leader>b', ':Telescope buffers initial_mode=normal<cr>', opts)
+vim.api.nvim_set_keymap('n', '<leader>t', ':Telescope tags<cr>', opts)
+vim.api.nvim_set_keymap("n", "gr", ":Telescope lsp_references initial_mode=normal<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>d", ":Telescope diagnostics initial_mode=normal<CR>", opts)
