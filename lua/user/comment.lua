@@ -73,5 +73,3 @@ comment.setup({
   -- @type fun(ctx: Ctx)
   post_hook = nil,
 })
-
-vim.notify("Comment enabled")

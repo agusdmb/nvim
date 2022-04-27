@@ -5,5 +5,3 @@ if not status_ok then
 end
 
 vim.notify = notify
-
-vim.notify("Notify enable")

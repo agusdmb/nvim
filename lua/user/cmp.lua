@@ -142,5 +142,3 @@ cmp.setup {
     native_menu = false,
   },
 }
-
-vim.notify("Completion enabled")

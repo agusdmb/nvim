@@ -23,5 +23,3 @@ require('telescope').load_extension('fzf')
 vim.api.nvim_set_keymap('n', '<c-p>', ':Telescope find_files<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>b', ':Telescope buffers initial_mode=normal<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>t', ':Telescope tags<cr>', { noremap = true, silent = true })
-
-vim.notify("Telescope enabled")

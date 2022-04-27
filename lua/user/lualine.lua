@@ -5,5 +5,3 @@ if not status_ok then
 end
 
 lualine.setup()
-
-vim.notify("Lualine enabled")

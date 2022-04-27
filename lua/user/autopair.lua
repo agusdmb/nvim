@@ -5,5 +5,3 @@ if not status_ok then
 end
 
 autopairs.setup()
-
-vim.notify("Autopairs enabled")

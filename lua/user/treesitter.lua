@@ -46,5 +46,3 @@ treesitter.setup {
     },
   },
 }
-
-vim.notify("TreeSitter enable")
