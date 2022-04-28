@@ -1,10 +1,9 @@
 require "user.options"
 require "user.keymaps"
+require "user.autocmd"
 require "user.plugins"
 require "user.colorscheme"
-
 require "user.notify"
-
 require "user.lsp"
 require "user.cmp"
 require "user.treesitter"
@@ -14,3 +13,4 @@ require "user.lazygit"
 require "user.telescope"
 require "user.nvim-tree"
 require "user.lualine"
+require "user.copilot"
