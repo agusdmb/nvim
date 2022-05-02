@@ -15,5 +15,8 @@ vim.cmd [[
     autocmd!
     autocmd VimEnter * Copilot disable
   augroup end
+
+  autocmd FileType sh nmap <buffer> <NL> :Exec<CR>
+  command Exec set splitright | vnew | set filetype=json | read !sh #
 ]]
 

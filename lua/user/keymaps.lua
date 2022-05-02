@@ -46,17 +46,17 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
--- keymap("v", "p", '"_dP', opts)
+-- -- Move text up and down
+-- keymap("v", "<A-j>", ":m .+1<CR>==", opts)
+-- keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+-- -- keymap("v", "p", '"_dP', opts)
 
--- Visual Block --
--- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+-- -- Visual Block --
+-- -- Move text up and down
+-- keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
+-- keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+-- keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+-- keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
 -- Better terminal navigation
@@ -67,8 +67,12 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- keymap("t", "<esc>", "<C-\\><C-N>", term_opts)
 
 -- agusdmb --
-keymap('n', ';', ':', {})
-keymap('v', ';', ':', {})
+keymap("n", ";", ":", opts)
+keymap("v", ";", ":", opts)
+
+-- Swapped this commands
+keymap("n", "`", "'", opts)
+keymap("n", "'", "`", opts)
 
 keymap('n', '<leader>q', ':quit<cr>', opts)
 keymap('n', '<leader>x', ':exit<cr>', opts)
@@ -85,5 +89,6 @@ keymap('n', '<leader>p', '"+p', opts)
 keymap('n', '<leader>', ':nohlsearch<cr>', opts)
 
 keymap('n', '<leader>c', ':bd<cr>', opts)
+keymap('n', '<leader>C', ':bd!<cr>', opts)
 
 keymap('n', '<leader>z', ':tab split<cr>', opts)
