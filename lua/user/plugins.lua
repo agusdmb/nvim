@@ -161,6 +161,15 @@ return packer.startup(function(use)
     end
   }
 
+  use {
+    "ur4ltz/surround.nvim",
+    config = function()
+      require "surround".setup { mappings_style = "surround" }
+    end
+  }
+
+  use "tpope/vim-repeat"
+
   -- use {
   --   "folke/which-key.nvim",
   --   config = function()
