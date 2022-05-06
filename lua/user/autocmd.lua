@@ -1,4 +1,5 @@
 vim.cmd [[
+
   augroup user_terminal
     autocmd!
     autocmd TermOpen,TermEnter,BufWinEnter,WinEnter term://* startinsert
@@ -16,7 +17,16 @@ vim.cmd [[
     autocmd VimEnter * Copilot disable
   augroup end
 
-  autocmd FileType sh nmap <buffer> <NL> :Exec<CR>
-  command Exec set splitright | vnew | set filetype=json | read !sh #
-]]
+  augroup user_postman
+    autocmd!
+    autocmd FileType sh nmap <buffer> <NL> :Exec<CR>
+    command Exec set splitright | vnew | set filetype=json | read !sh #
+  augroup end
 
+  augroup user_markdown
+    autocmd!
+    autocmd FileType markdown setlocal shiftwidth=4
+    autocmd FileType markdown setlocal tabstop=4
+  augroup end
+
+]]
