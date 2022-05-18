@@ -27,7 +27,7 @@ local options = {
   numberwidth = 2, -- set number column width to 2 {default 4}
   signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
   wrap = false, -- display lines as one long line
-  scrolloff = 8, -- is one of my fav
+  scrolloff = 3,
   sidescrolloff = 8,
   showtabline = 0
 }

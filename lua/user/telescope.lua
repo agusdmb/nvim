@@ -27,3 +27,4 @@ vim.api.nvim_set_keymap('n', '<leader>b', ':Telescope buffers initial_mode=norma
 vim.api.nvim_set_keymap('n', '<leader>t', ':Telescope tags<cr>', opts)
 vim.api.nvim_set_keymap("n", "gr", ":Telescope lsp_references initial_mode=normal<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>d", ":Telescope diagnostics initial_mode=normal<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>a", ":Telescope live_grep<cr>", opts)
