@@ -12,10 +12,10 @@ vim.cmd [[
     autocmd VimResized * tabdo wincmd =
   augroup end
 
-  augroup user_copilot
-    autocmd!
-    autocmd VimEnter * Copilot disable
-  augroup end
+  " augroup user_copilot
+  "   autocmd!
+  "   autocmd VimEnter * Copilot disable
+  " augroup end
 
   augroup user_postman
     autocmd!
