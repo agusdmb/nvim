@@ -170,6 +170,8 @@ return packer.startup(function(use)
 
   use "tpope/vim-repeat"
 
+  -- use "tpope/vim-surround"
+
   -- use {
   --   "folke/which-key.nvim",
   --   config = function()
@@ -192,6 +194,10 @@ return packer.startup(function(use)
   }
 
   use "nvim-neotest/neotest-python"
+
+  use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
+
+  use "bronson/vim-visual-star-search"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
