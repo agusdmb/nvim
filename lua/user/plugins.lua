@@ -90,7 +90,7 @@ return packer.startup(function(use)
   -- use "f-person/git-blame.nvim"
   use "kdheepak/lazygit.nvim"
 
-  use "github/copilot.vim"
+  -- use "github/copilot.vim"
 
   use "rcarriga/nvim-notify"
 
@@ -198,6 +198,8 @@ return packer.startup(function(use)
   use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
 
   use "bronson/vim-visual-star-search"
+
+  use "chentoast/marks.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
