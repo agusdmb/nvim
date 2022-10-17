@@ -29,7 +29,8 @@ local options = {
   wrap = false, -- display lines as one long line
   scrolloff = 3,
   sidescrolloff = 8,
-  showtabline = 0
+  showtabline = 1,
+  linebreak = true
 }
 
 vim.opt.shortmess:append "c"

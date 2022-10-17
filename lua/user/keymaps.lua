@@ -92,3 +92,5 @@ keymap('n', '<leader>c', ':bd<cr>', opts)
 keymap('n', '<leader>C', ':bd!<cr>', opts)
 
 keymap('n', '<leader>z', ':tab split<cr>', opts)
+
+keymap('i', 'kj', '<esc>', opts)

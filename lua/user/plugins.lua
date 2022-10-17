@@ -201,6 +201,8 @@ return packer.startup(function(use)
 
   use "chentoast/marks.nvim"
 
+  use "junegunn/vim-easy-align"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
