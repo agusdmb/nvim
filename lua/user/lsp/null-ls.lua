@@ -21,4 +21,4 @@ null_ls.setup {
   },
 }
 
-vim.api.nvim_set_keymap('n', '<leader>f', ':lua vim.lsp.buf.formatting()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>f', ':lua vim.lsp.buf.format()<cr>', { noremap = true, silent = true })
