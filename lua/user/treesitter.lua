@@ -7,6 +7,7 @@ end
 treesitter.setup {
   ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
+  auto_install = true,
   ignore_install = { "" }, -- List of parsers to ignore installing
   autopairs = {
     enable = true,
@@ -14,7 +15,7 @@ treesitter.setup {
   highlight = {
     enable = true, -- false will disable the whole extension
     disable = { "" }, -- list of language that will be disabled
-    additional_vim_regex_highlighting = true,
+    additional_vim_regex_highlighting = false,
   },
   indent = { enable = true, disable = { "yaml" } },
   context_commentstring = {
@@ -43,6 +44,15 @@ treesitter.setup {
         ["<leader>df"] = "@function.outer",
         ["<leader>dF"] = "@class.outer",
       },
+    },
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn", -- set to `false` to disable one of the mappings
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
     },
   },
 }

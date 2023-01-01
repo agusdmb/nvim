@@ -18,13 +18,14 @@ telescope.setup({
 
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
-require('telescope').load_extension('fzf')
+telescope.load_extension('fzf')
 
 local opts = { noremap = true, silent = true }
+local builtin = require('telescope.builtin')
 
-vim.api.nvim_set_keymap('n', '<c-p>', ':Telescope find_files<cr>', opts)
-vim.api.nvim_set_keymap('n', '<leader>b', ':Telescope buffers initial_mode=normal<cr>', opts)
-vim.api.nvim_set_keymap('n', '<leader>t', ':Telescope tags<cr>', opts)
-vim.api.nvim_set_keymap("n", "gr", ":Telescope lsp_references initial_mode=normal<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>d", ":Telescope diagnostics initial_mode=normal<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>a", ":Telescope live_grep<cr>", opts)
+vim.keymap.set('n', '<c-p>', builtin.find_files, opts)
+vim.keymap.set('n', '<leader>b', builtin.buffers, opts)
+vim.keymap.set('n', '<leader>t', builtin.tags, opts)
+vim.keymap.set("n", "gr", builtin.lsp_references, opts)
+vim.keymap.set("n", "<leader>d", builtin.diagnostics, opts)
+vim.keymap.set("n", "<leader>a", builtin.live_grep, opts)
