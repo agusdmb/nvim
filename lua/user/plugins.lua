@@ -58,10 +58,20 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-  -- LSP
-  use "neovim/nvim-lspconfig"
-  use "williamboman/mason.nvim"
-  use "williamboman/mason-lspconfig.nvim"
+  use { -- LSP Configuration & Plugins
+    'neovim/nvim-lspconfig',
+    requires = {
+      -- Automatically install LSPs to stdpath for neovim
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+
+      -- Useful status updates for LSP
+      'j-hui/fidget.nvim',
+
+      -- Additional lua configuration, makes nvim stuff amazing
+      'folke/neodev.nvim',
+    },
+  }
   use "jose-elias-alvarez/null-ls.nvim"
 
   use {
