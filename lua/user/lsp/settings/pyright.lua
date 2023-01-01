@@ -3,7 +3,8 @@ return {
     python = {
       analysis = {
         diagnosticMode = "openFilesOnly",
-        typeCheckingMode = "basic"
+        typeCheckingMode = "off",
+        disableOrganizeImports = true
       }
     }
   },
