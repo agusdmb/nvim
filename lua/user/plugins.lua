@@ -167,13 +167,13 @@ return packer.startup({ function(use)
 
   -- use "tpope/vim-surround"
 
-  -- use {
-  --   "folke/which-key.nvim",
-  --   config = function()
-  --     require("which-key").setup {
-  --     }
-  --   end
-  -- }
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup {
+      }
+    end
+  }
 
   use "lewis6991/impatient.nvim"
 
