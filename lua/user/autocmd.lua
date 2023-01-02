@@ -29,9 +29,9 @@ vim.cmd [[
     autocmd FileType markdown setlocal tabstop=4
   augroup end
 
-  augroup highlight_current_word
-    autocmd!
-    autocmd CursorHold * :exec 'match Search /\V\<' . expand('<cword>') . '\>/'
-  augroup END
+  " augroup highlight_current_word
+  "   autocmd!
+  "   autocmd CursorHold * :exec 'match Search /\V\<' . expand('<cword>') . '\>/'
+  " augroup END
 
 ]]
