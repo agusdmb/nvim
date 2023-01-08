@@ -18,7 +18,7 @@ telescope.setup({
 
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
-telescope.load_extension('fzf')
+telescope.load_extension("fzf")
 
 local opts = { noremap = true, silent = true }
 local builtin = require('telescope.builtin')
@@ -29,3 +29,14 @@ vim.keymap.set('n', '<leader>t', builtin.tags, opts)
 vim.keymap.set("n", "gr", builtin.lsp_references, opts)
 vim.keymap.set("n", "<leader>d", builtin.diagnostics, opts)
 vim.keymap.set("n", "<leader>a", builtin.live_grep, opts)
+
+-- load refactoring Telescope extension
+require("telescope").load_extension("refactoring")
+
+-- remap to open the Telescope refactoring menu in visual mode
+vim.api.nvim_set_keymap(
+	"v",
+	"<leader>R",
+	"<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
+	{ noremap = true }
+)

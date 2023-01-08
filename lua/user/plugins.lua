@@ -184,11 +184,11 @@ return packer.startup({ function(use)
     requires = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
-      "antoinemadec/FixCursorHold.nvim"
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-neotest/neotest-python",
+      "nvim-neotest/neotest-go",
     }
   }
-
-  use "nvim-neotest/neotest-python"
 
   use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
 
@@ -198,7 +198,6 @@ return packer.startup({ function(use)
 
   use "junegunn/vim-easy-align"
 
-  -- Packer
   use({
     "jackMort/ChatGPT.nvim",
     config = function()
@@ -212,6 +211,25 @@ return packer.startup({ function(use)
       "nvim-telescope/telescope.nvim"
     }
   })
+
+  use {
+    "folke/twilight.nvim",
+    config = function()
+      require("twilight").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+
+  use {
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-treesitter/nvim-treesitter" }
+    }
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
