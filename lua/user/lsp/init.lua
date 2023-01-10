@@ -101,7 +101,7 @@ require('lspconfig')['pyright'].setup {
     python = {
       analysis = {
         diagnosticMode = "openFilesOnly",
-        typeCheckingMode = "off",
+        typeCheckingMode = "basic",
         disableOrganizeImports = true
       }
     }

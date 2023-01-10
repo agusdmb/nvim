@@ -22,8 +22,6 @@ end
 return packer.startup({ function(use)
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  -- use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  -- use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "lunarvim/colorschemes"
 
   -- cmp plugins
@@ -76,24 +74,20 @@ return packer.startup({ function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
+
   use "nvim-treesitter/nvim-treesitter-textobjects"
 
-  -- use "mfussenegger/nvim-lint"
   use "windwp/nvim-autopairs"
   use "numToStr/Comment.nvim"
-  -- use "mhartington/formatter.nvim"
-  -- use "f-person/git-blame.nvim"
   use "kdheepak/lazygit.nvim"
-
-  -- use "github/copilot.vim"
 
   use "rcarriga/nvim-notify"
 
   use {
-    "kyazdani42/nvim-tree.lua",
+    'nvim-tree/nvim-tree.lua',
     requires = {
-      "kyazdani42/nvim-web-devicons", -- optional, for file icon
-    }
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
   }
 
   use { "iamcco/markdown-preview.nvim", run = "cd app && yarn install" }
@@ -197,20 +191,6 @@ return packer.startup({ function(use)
   use "chentoast/marks.nvim"
 
   use "junegunn/vim-easy-align"
-
-  use({
-    "jackMort/ChatGPT.nvim",
-    config = function()
-      require("chatgpt").setup({
-        -- optional configuration
-      })
-    end,
-    requires = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
-    }
-  })
 
   use {
     "folke/twilight.nvim",

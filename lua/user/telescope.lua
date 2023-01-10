@@ -29,14 +29,15 @@ vim.keymap.set('n', '<leader>t', builtin.tags, opts)
 vim.keymap.set("n", "gr", builtin.lsp_references, opts)
 vim.keymap.set("n", "<leader>d", builtin.diagnostics, opts)
 vim.keymap.set("n", "<leader>a", builtin.live_grep, opts)
+vim.keymap.set("n", "<leader>A", builtin.grep_string, opts)
 
 -- load refactoring Telescope extension
 require("telescope").load_extension("refactoring")
 
 -- remap to open the Telescope refactoring menu in visual mode
 vim.api.nvim_set_keymap(
-	"v",
-	"<leader>R",
-	"<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
-	{ noremap = true }
+  "v",
+  "<leader>R",
+  "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
+  { noremap = true }
 )
