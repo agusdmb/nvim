@@ -72,6 +72,8 @@ vim.keymap.set("t", "<c-t>", vim.cmd.ToggleTerm)
 -- agusdmb --
 keymap("n", ";", ":", opts)
 keymap("v", ";", ":", opts)
+keymap("n", ":", ";", opts)
+keymap("v", ":", ";", opts)
 
 -- Swapped this commands
 keymap("n", "`", "'", opts)

@@ -127,7 +127,7 @@ return packer.startup({ function(use)
 
   use "machakann/vim-highlightedyank"
 
-  use "majutsushi/tagbar"
+  use "preservim/tagbar"
 
   use {
     "petertriho/nvim-scrollbar",
@@ -150,12 +150,22 @@ return packer.startup({ function(use)
     end
   }
 
-  use {
-    "ur4ltz/surround.nvim",
+  -- use {
+  --   "ur4ltz/surround.nvim",
+  --   config = function()
+  --     require "surround".setup { mappings_style = "surround" }
+  --   end
+  -- }
+
+  use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
     config = function()
-      require "surround".setup { mappings_style = "surround" }
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
     end
-  }
+  })
 
   use "tpope/vim-repeat"
 
