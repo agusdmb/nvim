@@ -30,6 +30,7 @@ vim.keymap.set("n", "gr", builtin.lsp_references, opts)
 vim.keymap.set("n", "<leader>d", builtin.diagnostics, opts)
 vim.keymap.set("n", "<leader>a", builtin.live_grep, opts)
 vim.keymap.set("n", "<leader>A", builtin.grep_string, opts)
+vim.keymap.set("n", "<leader>s", builtin.builtin, opts)
 
 -- load refactoring Telescope extension
 require("telescope").load_extension("refactoring")
