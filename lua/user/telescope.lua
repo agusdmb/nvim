@@ -20,6 +20,7 @@ telescope.setup({
 -- load_extension, somewhere after setup function:
 telescope.load_extension("fzf")
 telescope.load_extension("lazygit")
+telescope.load_extension("harpoon")
 
 local opts = { noremap = true, silent = true }
 local builtin = require('telescope.builtin')

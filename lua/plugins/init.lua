@@ -138,13 +138,6 @@ return {
     end
   },
 
-  -- {
-  --   "ur4ltz/surround.nvim",
-  --   config = function()
-  --     require "surround".setup { mappings_style = "surround" }
-  --   end
-  -- },
-
   ({
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -156,8 +149,6 @@ return {
   }),
 
   "tpope/vim-repeat",
-
-  --"tpope/vim-surround",
 
   {
     "folke/which-key.nvim",
@@ -212,6 +203,8 @@ return {
     }
   },
 
+  "ThePrimeagen/harpoon",
+
   "github/copilot.vim",
 
   {
@@ -245,4 +238,25 @@ return {
       }
     end
   },
+
+  -- {
+  --   'sunjon/shade.nvim',
+  --   config = {
+  --     overlay_opacity = 50,
+  --     opacity_step = 1,
+  --     keys = {
+  --       brightness_up   = '<C-Up>',
+  --       brightness_down = '<C-Down>',
+  --       toggle          = '<Leader>s',
+  --     }
+  --   }
+  -- },
+
+  -- {
+  --   'mfussenegger/nvim-dap-python',
+  --   dependencies = { 'mfussenegger/nvim-dap' }
+  -- },
+
+  -- 'rcarriga/nvim-dap-ui',
+
 }
