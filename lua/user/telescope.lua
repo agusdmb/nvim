@@ -23,7 +23,7 @@ telescope.load_extension("fzf")
 local opts = { noremap = true, silent = true }
 local builtin = require('telescope.builtin')
 
-vim.keymap.set('n', '<c-p>', builtin.find_files, opts)
+vim.keymap.set('n', '<c-p>', builtin.git_files, opts)
 vim.keymap.set('n', '<leader>b', builtin.buffers, opts)
 vim.keymap.set('n', '<leader>t', builtin.tags, opts)
 vim.keymap.set("n", "gr", builtin.lsp_references, opts)
