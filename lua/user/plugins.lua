@@ -26,18 +26,18 @@ return packer.startup({
     use "lunarvim/colorschemes"
 
     -- cmp plugins
-    use "hrsh7th/nvim-cmp" -- The completion plugin
-    use "hrsh7th/cmp-buffer" -- buffer completions
-    use "hrsh7th/cmp-path" -- path completions
+    use "hrsh7th/nvim-cmp"    -- The completion plugin
+    use "hrsh7th/cmp-buffer"  -- buffer completions
+    use "hrsh7th/cmp-path"    -- path completions
     use "hrsh7th/cmp-cmdline" -- cmdline completions
     use "hrsh7th/cmp-nvim-lsp"
 
     -- snippets
-    use "L3MON4D3/LuaSnip" --snippet engine
-    use "saadparwaiz1/cmp_luasnip" -- snippet completions
+    use "L3MON4D3/LuaSnip"             --snippet engine
+    use "saadparwaiz1/cmp_luasnip"     -- snippet completions
     use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-    use { -- LSP Configuration & Plugins
+    use {                              -- LSP Configuration & Plugins
       'neovim/nvim-lspconfig',
       requires = {
         -- Automatically install LSPs to stdpath for neovim
@@ -127,8 +127,6 @@ return packer.startup({
     -- use "bronson/vim-trailing-whitespace"
 
     use "machakann/vim-highlightedyank"
-
-    use "preservim/tagbar"
 
     use {
       "petertriho/nvim-scrollbar",
@@ -223,6 +221,13 @@ return packer.startup({
     }
 
     use "github/copilot.vim"
+
+    use {
+      'simrat39/symbols-outline.nvim',
+      config = function()
+        require('symbols-outline').setup({})
+      end
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
