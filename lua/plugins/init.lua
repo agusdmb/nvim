@@ -259,6 +259,7 @@ return {
   {
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",
+    version = "v3.2.2",
     opts = {
       load = {
         ["core.defaults"] = {},  -- Loads default behaviour
@@ -275,5 +276,31 @@ return {
     },
     dependencies = { { "nvim-lua/plenary.nvim" } },
   },
+
+  {
+    'pwntester/octo.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+    config = function()
+      require("octo").setup()
+    end
+  },
+
+  {
+    'dhruvmanila/browser-bookmarks.nvim',
+    dependencies = {
+      'kkharji/sqlite.lua',
+      'nvim-telescope/telescope.nvim',
+    }
+  },
+
+  'folke/tokyonight.nvim',
+  {
+    "catppuccin/nvim",
+    name = "catppuccin"
+  }
 
 }
