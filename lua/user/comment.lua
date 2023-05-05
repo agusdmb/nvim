@@ -26,7 +26,7 @@ comment.setup({
     -- Line-comment toggle keymap
     line = 'gcc',
     -- Block-comment toggle keymap
-    block = 'gcbb',
+    -- block = 'gcbb',
   },
 
   -- LHS of operator-pending mappings in NORMAL + VISUAL mode
@@ -35,19 +35,19 @@ comment.setup({
     -- Line-comment keymap
     line = 'gc',
     -- Block-comment keymap
-    block = 'gcb',
+    -- block = 'gcb',
   },
 
-  -- LHS of extra mappings
-  -- @type table
-  extra = {
-    -- Add comment on the line above
-    above = 'gcO',
-    -- Add comment on the line below
-    below = 'gco',
-    -- Add comment at the end of line
-    eol = 'gcA',
-  },
+  -- -- LHS of extra mappings
+  -- -- @type table
+  -- extra = {
+  --   -- Add comment on the line above
+  --   above = 'gcO',
+  --   -- Add comment on the line below
+  --   below = 'gco',
+  --   -- Add comment at the end of line
+  --   eol = 'gcA',
+  -- },
 
   -- Create basic (operator-pending) and extended mappings for NORMAL + VISUAL mode
   -- NOTE: If `mappings = false` then the plugin won't create any mappings
@@ -56,10 +56,10 @@ comment.setup({
     -- Operator-pending mapping
     -- Includes `gcc`, `gbc`, `gc[count]{motion}` and `gb[count]{motion}`
     -- NOTE: These mappings can be changed individually by `opleader` and `toggler` config
-    basic = true,
+    basic = false,
     -- Extra mapping
     -- Includes `gco`, `gcO`, `gcA`
-    extra = true,
+    extra = false,
     -- Extended mapping
     -- Includes `g>`, `g<`, `g>[count]{motion}` and `g<[count]{motion}`
     extended = false,
