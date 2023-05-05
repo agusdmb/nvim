@@ -262,7 +262,13 @@ return {
     version = "v3.2.2",
     opts = {
       load = {
-        ["core.defaults"] = {},  -- Loads default behaviour
+        ["core.defaults"] = {}, -- Loads default behaviour
+        ["core.completion"] = {
+          config = {
+            engine = "nvim-cmp",
+            name = "[Neorg]",
+          }
+        },
         ["core.concealer"] = {}, -- Adds pretty icons to your documents
         ["core.dirman"] = {      -- Manages Neorg workspaces
           config = {
