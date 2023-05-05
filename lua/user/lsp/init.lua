@@ -113,7 +113,6 @@ require('lspconfig')['lua_ls'].setup {
   capabilities = capabilities,
   flags = lsp_flags,
   settings = {
-
     Lua = {
       diagnostics = {
         globals = { "vim" },
@@ -123,6 +122,7 @@ require('lspconfig')['lua_ls'].setup {
           [vim.fn.expand("$VIMRUNTIME/lua")] = true,
           [vim.fn.stdpath("config") .. "/lua"] = true,
         },
+        checkThirdParty = false,
       },
     },
   },
@@ -133,9 +133,9 @@ require('user.lsp.null-ls')
 
 local signs = {
   { name = "DiagnosticSignError", text = "" },
-  { name = "DiagnosticSignWarn", text = "" },
-  { name = "DiagnosticSignHint", text = "" },
-  { name = "DiagnosticSignInfo", text = "" },
+  { name = "DiagnosticSignWarn",  text = "" },
+  { name = "DiagnosticSignHint",  text = "" },
+  { name = "DiagnosticSignInfo",  text = "" },
 }
 
 for _, sign in ipairs(signs) do

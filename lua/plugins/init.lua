@@ -374,7 +374,7 @@ return {
           },
         },
         -- callback where you can add custom code when the Zen window opens
-        on_open = function(win)
+        on_open = function()
         end,
         -- callback where you can add custom code when the Zen window closes
         on_close = function()
