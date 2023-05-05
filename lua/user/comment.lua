@@ -26,7 +26,7 @@ comment.setup({
     -- Line-comment toggle keymap
     line = 'gcc',
     -- Block-comment toggle keymap
-    -- block = 'gcbb',
+    block = 'gcbb',
   },
 
   -- LHS of operator-pending mappings in NORMAL + VISUAL mode
@@ -35,7 +35,7 @@ comment.setup({
     -- Line-comment keymap
     line = 'gc',
     -- Block-comment keymap
-    -- block = 'gcb',
+    block = 'gcb',
   },
 
   -- -- LHS of extra mappings
@@ -59,7 +59,7 @@ comment.setup({
     basic = true,
     -- Extra mapping
     -- Includes `gco`, `gcO`, `gcA`
-    extra = true,
+    extra = false,
     -- Extended mapping
     -- Includes `g>`, `g<`, `g>[count]{motion}` and `g<[count]{motion}`
     extended = false,
