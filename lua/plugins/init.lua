@@ -53,7 +53,13 @@ return {
 
   "nvim-treesitter/nvim-treesitter-textobjects",
 
-  "windwp/nvim-autopairs",
+  {
+    "windwp/nvim-autopairs",
+    config = function()
+      require('nvim-autopairs').setup()
+    end
+  },
+
   "numToStr/Comment.nvim",
   "kdheepak/lazygit.nvim",
 
@@ -198,11 +204,9 @@ return {
     "github/copilot.vim",
     config = function()
       -- vim.cmd[[Copilot disable]]
-
       vim.g.copilot_no_tab_map = true
       -- vim.g.copilot_assume_mapped = true
       -- vim.g.copilot_tab_fallback = ""
-
       vim.cmd [[imap <silent><script><expr> <C-a> copilot#Accept("\CR")]]
     end
   },
