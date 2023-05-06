@@ -44,14 +44,6 @@ return {
     end
   },
 
-  -- Telescope
-  {
-    'nvim-telescope/telescope.nvim',
-    dependencies = { { 'nvim-lua/plenary.nvim' } }
-  },
-  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-
-  "nvim-treesitter/nvim-treesitter-textobjects",
 
   {
     "windwp/nvim-autopairs",
@@ -184,9 +176,6 @@ return {
     "folke/twilight.nvim",
     config = function()
       require("twilight").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
       }
     end
   },
@@ -198,8 +187,6 @@ return {
       { "nvim-treesitter/nvim-treesitter" }
     }
   },
-
-  "ThePrimeagen/harpoon",
 
   {
     "github/copilot.vim",
