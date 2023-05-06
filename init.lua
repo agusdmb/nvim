@@ -1,7 +1,6 @@
 require "user.impatient"
 require "user.keymaps"
 require "user.lazy"
-require "user.notify"
 require "user.lsp"
 require "user.cmp"
 require "user.comment"

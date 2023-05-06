@@ -63,7 +63,12 @@ return {
   "numToStr/Comment.nvim",
   "kdheepak/lazygit.nvim",
 
-  "rcarriga/nvim-notify",
+  {
+    "rcarriga/nvim-notify",
+    config = function()
+      vim.notify = require("notify")
+    end
+  },
 
   {
     'nvim-tree/nvim-tree.lua',
