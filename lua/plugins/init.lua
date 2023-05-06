@@ -174,17 +174,6 @@ return {
 
   "skywind3000/asyncrun.vim",
 
-  {
-    "nvim-neotest/neotest",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "antoinemadec/FixCursorHold.nvim",
-      "nvim-neotest/neotest-python",
-      "nvim-neotest/neotest-go",
-    }
-  },
-
   "bronson/vim-visual-star-search",
 
   "chentoast/marks.nvim",
