@@ -194,7 +194,18 @@ return {
 
   "ThePrimeagen/harpoon",
 
-  "github/copilot.vim",
+  {
+    "github/copilot.vim",
+    config = function()
+      -- vim.cmd[[Copilot disable]]
+
+      vim.g.copilot_no_tab_map = true
+      -- vim.g.copilot_assume_mapped = true
+      -- vim.g.copilot_tab_fallback = ""
+
+      vim.cmd [[imap <silent><script><expr> <C-a> copilot#Accept("\CR")]]
+    end
+  },
 
   {
     'simrat39/symbols-outline.nvim',
