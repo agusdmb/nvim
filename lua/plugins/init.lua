@@ -53,7 +53,13 @@ return {
   },
 
   "numToStr/Comment.nvim",
-  "kdheepak/lazygit.nvim",
+
+  {
+    "kdheepak/lazygit.nvim",
+    config = function()
+      vim.api.nvim_set_keymap("n", "<leader>l", ":LazyGit<cr>", { noremap = true, silent = true })
+    end
+  },
 
   {
     "rcarriga/nvim-notify",
