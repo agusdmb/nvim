@@ -66,9 +66,6 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- keymap("t", "<esc>", "<C-\\><C-N>", term_opts)
 
-vim.keymap.set("n", "<c-t>", vim.cmd.ToggleTerm)
-vim.keymap.set("t", "<c-t>", vim.cmd.ToggleTerm)
-
 -- agusdmb --
 keymap("n", ";", ":", opts)
 keymap("v", ";", ":", opts)

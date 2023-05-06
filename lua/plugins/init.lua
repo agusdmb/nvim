@@ -167,11 +167,6 @@ return {
     }
   },
 
-  {
-    "akinsho/toggleterm.nvim",
-    version = 'v2.*'
-  },
-
   "bronson/vim-visual-star-search",
 
   "chentoast/marks.nvim",
