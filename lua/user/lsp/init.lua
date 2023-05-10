@@ -93,20 +93,20 @@ require("mason-lspconfig").setup_handlers {
   end,
 }
 
-require('lspconfig')['pyright'].setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  flags = lsp_flags,
-  settings = {
-    python = {
-      analysis = {
-        diagnosticMode = "openFilesOnly",
-        typeCheckingMode = "basic",
-        disableOrganizeImports = true
-      }
-    }
-  },
-}
+-- require('lspconfig')['pyright'].setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   flags = lsp_flags,
+--   settings = {
+--     python = {
+--       analysis = {
+--         diagnosticMode = "openFilesOnly",
+--         typeCheckingMode = "basic",
+--         disableOrganizeImports = true
+--       }
+--     }
+--   },
+-- }
 
 require('lspconfig')['lua_ls'].setup {
   on_attach = on_attach,
@@ -149,8 +149,8 @@ local config = {
   signs = {
     active = signs,
   },
-  update_in_insert = true,
-  underline = true,
+  update_in_insert = false,
+  underline = false,
   severity_sort = true,
   float = {
     focusable = false,

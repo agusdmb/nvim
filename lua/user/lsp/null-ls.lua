@@ -1,7 +1,7 @@
 local null_ls_status_ok, null_ls = pcall(require, "null-ls")
 if not null_ls_status_ok then
-  vim.notify("Null-ls not found!", "error")
-  return
+    vim.notify("Null-ls not found!", "error")
+    return
 end
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
@@ -12,16 +12,17 @@ local diagnostics = null_ls.builtins.diagnostics
 local code_actions = null_ls.builtins.code_actions
 
 null_ls.setup {
-  debug = false,
-  sources = {
-    -- formatting.stylua,
-    -- formatting.prettier.with { extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } },
-    formatting.isort,
-    formatting.black,
-    diagnostics.pylint,
-    diagnostics.mypy,
-    code_actions.refactoring,
-  },
+    debug = false,
+    sources = {
+        -- formatting.stylua,
+        -- formatting.prettier.with { extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } },
+        formatting.isort,
+        formatting.black,
+        diagnostics.pylint,
+        diagnostics.mypy,
+        code_actions.refactoring
+    }
 }
 
-vim.api.nvim_set_keymap('n', '<leader>f', ':lua vim.lsp.buf.format()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>f', ':lua vim.lsp.buf.format()<cr>',
+                        {noremap = true, silent = true})
