@@ -1,30 +1,9 @@
 return {
+    "nvim-neotest/neotest-go",
     "nvim-neotest/neotest",
     dependencies = {
         "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter",
-        "antoinemadec/FixCursorHold.nvim", "nvim-neotest/neotest-python", {
-            'rcarriga/nvim-dap-ui',
-            config = function()
-                require("dapui").setup()
-                local dap, dapui = require("dap"), require("dapui")
-                dap.listeners.after.event_initialized["dapui_config"] =
-                    function() dapui.open() end
-                dap.listeners.before.event_terminated["dapui_config"] =
-                    function() dapui.close() end
-                dap.listeners.before.event_exited["dapui_config"] = function()
-                    dapui.close()
-                end
-            end
-        }, "nvim-neotest/neotest-go", {
-            'mfussenegger/nvim-dap-python',
-            dependencies = {'mfussenegger/nvim-dap'},
-            config = function()
-                local mason_path = vim.fn.glob(
-                                       vim.fn.stdpath 'data' .. '/mason/')
-                require('dap-python').setup(mason_path ..
-                                                'packages/debugpy/venv/bin/python')
-            end
-        }
+        "antoinemadec/FixCursorHold.nvim", "nvim-neotest/neotest-python"
     },
     config = function()
         -- vim.builtin.dap.active = true
@@ -47,5 +26,30 @@ return {
         vim.api.nvim_set_keymap("n", "<leader>r",
                                 ":lua require('neotest').summary.open()<cr>",
                                 {noremap = true, silent = true})
-    end
+    end,
+    {
+        'mfussenegger/nvim-dap-python',
+        dependencies = {'mfussenegger/nvim-dap'},
+        config = function()
+            local mason_path = vim.fn.glob(vim.fn.stdpath 'data' .. '/mason/')
+            require('dap-python').setup(mason_path ..
+                                            'packages/debugpy/venv/bin/python')
+        end
+    },
+    {
+        'rcarriga/nvim-dap-ui',
+        config = function()
+            require("dapui").setup()
+            local dap, dapui = require("dap"), require("dapui")
+            dap.listeners.after.event_initialized["dapui_config"] = function()
+                dapui.open()
+            end
+            dap.listeners.before.event_terminated["dapui_config"] = function()
+                dapui.close()
+            end
+            dap.listeners.before.event_exited["dapui_config"] = function()
+                dapui.close()
+            end
+        end
+    }
 }

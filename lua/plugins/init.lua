@@ -99,11 +99,9 @@ return {
                 -- Configuration here, or leave empty to use defaults
             })
         end
-    }), "tpope/vim-repeat",
-
-    "skywind3000/asyncrun.vim", "bronson/vim-visual-star-search",
-
-    "chentoast/marks.nvim", "junegunn/vim-easy-align",
+    }), "tpope/vim-repeat", "skywind3000/asyncrun.vim",
+    "bronson/vim-visual-star-search", "chentoast/marks.nvim",
+    "junegunn/vim-easy-align",
 
     {
         "folke/twilight.nvim",
@@ -334,6 +332,16 @@ return {
             vim.cmd(
                 [[command! -nargs=0 SetEnv lua require('swenv.api').pick_venv()]])
         end
-    }, {'stevearc/dressing.nvim', opts = {}}
+    }, {'stevearc/dressing.nvim', opts = {}}, {
+        "folke/trouble.nvim",
+        dependencies = {"nvim-tree/nvim-web-devicons"},
+        config = function()
+            require("trouble").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    }
 
 }
