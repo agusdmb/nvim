@@ -3,7 +3,10 @@ return {
     dependencies = {
         "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter",
         "antoinemadec/FixCursorHold.nvim", "nvim-neotest/neotest-python",
-        "nvim-neotest/neotest-go", {
+        {
+            'rcarriga/nvim-dap-ui',
+            config = function() require("dapui").setup() end
+        }, "nvim-neotest/neotest-go", {
             'mfussenegger/nvim-dap-python',
             dependencies = {'mfussenegger/nvim-dap'},
             config = function()
