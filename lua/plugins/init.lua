@@ -99,7 +99,7 @@ return {
                 -- Configuration here, or leave empty to use defaults
             })
         end
-    }), "tpope/vim-repeat", "lewis6991/impatient.nvim",
+    }), "tpope/vim-repeat",
 
     "skywind3000/asyncrun.vim", "bronson/vim-visual-star-search",
 
