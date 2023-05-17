@@ -2,10 +2,19 @@ return {
     "nvim-neotest/neotest",
     dependencies = {
         "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter",
-        "antoinemadec/FixCursorHold.nvim", "nvim-neotest/neotest-python",
-        {
+        "antoinemadec/FixCursorHold.nvim", "nvim-neotest/neotest-python", {
             'rcarriga/nvim-dap-ui',
-            config = function() require("dapui").setup() end
+            config = function()
+                require("dapui").setup()
+                local dap, dapui = require("dap"), require("dapui")
+                dap.listeners.after.event_initialized["dapui_config"] =
+                    function() dapui.open() end
+                dap.listeners.before.event_terminated["dapui_config"] =
+                    function() dapui.close() end
+                dap.listeners.before.event_exited["dapui_config"] = function()
+                    dapui.close()
+                end
+            end
         }, "nvim-neotest/neotest-go", {
             'mfussenegger/nvim-dap-python',
             dependencies = {'mfussenegger/nvim-dap'},
