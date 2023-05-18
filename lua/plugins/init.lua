@@ -185,7 +185,11 @@ return {
     }, {
         'dhruvmanila/browser-bookmarks.nvim',
         dependencies = {'kkharji/sqlite.lua', 'nvim-telescope/telescope.nvim'}
-    }, 'folke/tokyonight.nvim', {"catppuccin/nvim", name = "catppuccin"}, {
+    }, 'folke/tokyonight.nvim', {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        config = function() vim.cmd.colorscheme("catppuccin") end
+    }, {
         "folke/zen-mode.nvim",
         config = function()
             require("zen-mode").setup({
