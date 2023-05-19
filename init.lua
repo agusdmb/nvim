@@ -1,4 +1,3 @@
-require "user.impatient"
 require "user.keymaps"
 require "user.lazy"
 require "user.lsp"
