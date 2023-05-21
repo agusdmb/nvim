@@ -1,27 +1,37 @@
-vim.cmd [[
+vim.api.nvim_create_augroup("user_terminal", {})
+vim.api.nvim_create_autocmd({ "TermOpen", "TermEnter", "BufWinEnter", "WinEnter" }, {
+	group = "user_terminal",
+	pattern = "term://*",
+	command = "startinsert",
+})
+vim.api.nvim_create_autocmd({ "TermOpen", "TermEnter" }, {
+	group = "user_terminal",
+	pattern = "term://*",
+	command = "setlocal nonumber",
+})
+vim.api.nvim_create_autocmd({ "TermOpen", "TermEnter" }, {
+	group = "user_terminal",
+	pattern = "term://*",
+	command = "setlocal norelativenumber",
+})
 
-  augroup user_terminal
-    autocmd!
-    autocmd TermOpen,TermEnter,BufWinEnter,WinEnter term://* startinsert
-    autocmd TermOpen,TermEnter term://* setlocal nonumber
-    autocmd TermOpen,TermEnter term://* setlocal norelativenumber
-  augroup end
+vim.api.nvim_create_augroup("user_resize", {})
+vim.api.nvim_create_autocmd({ "VimResized" }, {
+	group = "user_resize",
+	command = "tabdo wincmd =",
+})
 
-  augroup user_resize
-    autocmd!
-    autocmd VimResized * tabdo wincmd =
-  augroup end
+vim.api.nvim_create_augroup("user_postman", {})
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	group = "user_postman",
+	pattern = "sh",
+	command = "nmap <buffer> <NL> :Exec<CR>",
+})
+vim.api.nvim_command("command Exec set splitright | vnew | set filetype=json | read !sh #")
 
-  augroup user_postman
-    autocmd!
-    autocmd FileType sh nmap <buffer> <NL> :Exec<CR>
-    command Exec set splitright | vnew | set filetype=json | read !sh #
-  augroup end
-
-  augroup user_markdown
-    autocmd!
-    autocmd FileType markdown setlocal shiftwidth=4
-    autocmd FileType markdown setlocal tabstop=4
-  augroup end
-
-]]
+vim.api.nvim_create_augroup("user_markdown", {})
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	group = "user_markdown",
+	pattern = "markdown",
+	command = "setlocal shiftwidth=4",
+})
