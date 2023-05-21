@@ -2,30 +2,6 @@ return {
     -- My plugins here
     "lunarvim/colorschemes", -- cmp plugins
     {
-        -- LSP Configuration & Plugins
-        'neovim/nvim-lspconfig',
-        dependencies = {
-            -- Automatically install LSPs to stdpath for neovim
-            'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim',
-
-            -- Useful status updates for LSP
-            'j-hui/fidget.nvim',
-
-            -- Additional lua configuration, makes nvim stuff amazing
-            {
-                'folke/neodev.nvim',
-                config = function()
-                    require('neodev').setup({
-                        library = {plugins = {"nvim-dap-ui"}, types = true}
-                    })
-                end
-            }
-        }
-    },
-
-    {"jose-elias-alvarez/null-ls.nvim", dependencies = "nvim-lua/plenary.nvim"},
-
-    {
         "ray-x/lsp_signature.nvim",
         config = function()
             require('lsp_signature').setup({hint_enable = false})
@@ -264,27 +240,6 @@ return {
     {
         "folke/which-key.nvim",
         config = function() require("which-key").setup {} end
-    }, {
-        "jay-babu/mason-null-ls.nvim",
-        event = {"BufReadPre", "BufNewFile"},
-        dependencies = {
-            "williamboman/mason.nvim", "jose-elias-alvarez/null-ls.nvim"
-        },
-        config = function()
-            require("mason").setup()
-            require("mason-null-ls").setup({
-                ensure_installed = {
-                    -- Opt to list sources here, when available in mason.
-                },
-                automatic_installation = false,
-                handlers = {}
-            })
-            require("null-ls").setup({
-                sources = {
-                    -- Anything not supported by mason.
-                }
-            })
-        end
     }, {
         dir = "/home/agusdmb/dev/gh-review/",
         dependencies = "nvim-lua/plenary.nvim",
