@@ -108,10 +108,7 @@ return {
 	{
 		"github/copilot.vim",
 		config = function()
-			-- vim.cmd[[Copilot disable]]
 			vim.g.copilot_no_tab_map = true
-			-- vim.g.copilot_assume_mapped = true
-			-- vim.g.copilot_tab_fallback = ""
 			vim.cmd([[imap <silent><script><expr> <C-a> copilot#Accept("\CR")]])
 		end,
 	},
@@ -131,18 +128,15 @@ return {
 		config = function()
 			require("barbecue").setup()
 		end,
-	}, -- Lua
+	},
 	{
 		"folke/todo-comments.nvim",
 		dependencies = "nvim-lua/plenary.nvim",
 		config = function()
-			require("todo-comments").setup({
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				-- refer to the configuration section below
-			})
+			require("todo-comments").setup({})
 		end,
-	}, -- {
+	},
+	-- {
 	--   'sunjon/shade.nvim',
 	--   config = {
 	--     overlay_opacity = 50,
@@ -193,7 +187,6 @@ return {
 		"dhruvmanila/browser-bookmarks.nvim",
 		dependencies = { "kkharji/sqlite.lua", "nvim-telescope/telescope.nvim" },
 	},
-	"folke/tokyonight.nvim",
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
