@@ -1,17 +1,22 @@
-return {
-  "neovim/nvim-lspconfig",
-  config = function()
+local function setup_mason()
+require("mason").setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
+})
+end
+
+local function setup_mason_lspconfig()
+  require("mason-lspconfig").setup()
+end
+
+local function setup_lspconfig()
 -- Setup language servers.
 local lspconfig = require('lspconfig')
-lspconfig.pyright.setup {}
-lspconfig.tsserver.setup {}
-lspconfig.rust_analyzer.setup {
-  -- Server-specific settings. See `:help lspconfig-setup`
-  settings = {
-    ['rust-analyzer'] = {},
-  },
-}
-
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -48,7 +53,22 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<space>f', function()
       vim.lsp.buf.format { async = true }
     end, opts)
-  end,
+end
 })
-  end
+end
+
+return {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = {
+      {
+        "williamboman/mason.nvim",
+        buid = ":MasonUpdate"
+      },
+      "neovim/nvim-lspconfig",
+    }, -- :MasonUpdate updates registry contents
+    config = function()
+      setup_mason()
+      setup_mason_lspconfig()
+      setup_lspconfig()
+    end
 }
