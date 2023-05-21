@@ -100,8 +100,7 @@ return {
             })
         end
     }), "tpope/vim-repeat", "skywind3000/asyncrun.vim",
-    "bronson/vim-visual-star-search", "chentoast/marks.nvim",
-    "junegunn/vim-easy-align",
+    "bronson/vim-visual-star-search", "junegunn/vim-easy-align",
 
     {
         "folke/twilight.nvim",
