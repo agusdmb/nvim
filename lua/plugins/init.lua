@@ -1,6 +1,4 @@
 return {
-	-- My plugins here
-	-- "lunarvim/colorschemes", -- cmp plugins
 	{
 		"ray-x/lsp_signature.nvim",
 		config = function()
@@ -324,7 +322,7 @@ return {
 				-- Something to do after setting an environment, for example call vim.cmd.LspRestart
 				-- post_set_venv = nil
 				--
-				get_venvs = function(venvs_path)
+				get_venvs = function(_)
 					local venvs = {}
 					local handle = io.popen('pyenv versions | grep -e "-->"')
 					local output = handle:read("*a")
@@ -354,6 +352,23 @@ return {
 				-- or leave it empty to use the default settings
 				-- refer to the configuration section below
 			})
+		end,
+	},
+
+	-- {
+	-- 	"ggandor/leap.nvim",
+	-- 	config = function()
+	-- 		require("leap").add_default_mappings()
+	-- 	end,
+	-- },
+
+	{
+		"phaazon/hop.nvim",
+		version = "v2", -- optional but strongly recommended
+		config = function()
+			-- you can configure Hop the way you like here; see :h hop-config
+			require("hop").setup({ keys = "etovxqpdgfblzhckisuran" })
+			vim.keymap.set("n", "s", ":HopChar2<cr>")
 		end,
 	},
 }
