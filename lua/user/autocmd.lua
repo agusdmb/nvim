@@ -12,11 +12,6 @@ vim.cmd [[
     autocmd VimResized * tabdo wincmd =
   augroup end
 
-  " augroup user_copilot
-  "   autocmd!
-  "   autocmd VimEnter * Copilot disable
-  " augroup end
-
   augroup user_postman
     autocmd!
     autocmd FileType sh nmap <buffer> <NL> :Exec<CR>
@@ -28,10 +23,5 @@ vim.cmd [[
     autocmd FileType markdown setlocal shiftwidth=4
     autocmd FileType markdown setlocal tabstop=4
   augroup end
-
-  " augroup highlight_current_word
-  "   autocmd!
-  "   autocmd CursorHold * :exec 'match Search /\V\<' . expand('<cword>') . '\>/'
-  " augroup END
 
 ]]
