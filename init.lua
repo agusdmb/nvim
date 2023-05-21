@@ -1,6 +1,5 @@
 require "user.keymaps"
 require "user.lazy"
 require "user.lsp"
-require "user.cmp"
 require "user.autocmd"
 require "user.options"

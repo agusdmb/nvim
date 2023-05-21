@@ -1,14 +1,6 @@
 return {
     -- My plugins here
     "lunarvim/colorschemes", -- cmp plugins
-    "hrsh7th/nvim-cmp", -- The completion plugin
-    "hrsh7th/cmp-buffer", -- buffer completions
-    "hrsh7th/cmp-path", -- path completions
-    "hrsh7th/cmp-cmdline", -- cmdline completions
-    "hrsh7th/cmp-nvim-lsp", -- snippets
-    "L3MON4D3/LuaSnip", -- snippet engine
-    "saadparwaiz1/cmp_luasnip", -- snippet completions
-    "rafamadriz/friendly-snippets", -- a bunch of snippets to use
     {
         -- LSP Configuration & Plugins
         'neovim/nvim-lspconfig',
