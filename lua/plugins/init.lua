@@ -50,11 +50,6 @@ return {
     }, {
         "rcarriga/nvim-notify",
         config = function() vim.notify = require("notify") end
-    }, {
-        'nvim-tree/nvim-tree.lua',
-        dependencies = {
-            'nvim-tree/nvim-web-devicons' -- optional, for file icons
-        }
     }, {"iamcco/markdown-preview.nvim", build = "cd app && yarn install"}, {
         "nvim-lualine/lualine.nvim",
         dependencies = {"nvim-tree/nvim-web-devicons", opt = true},
