@@ -134,6 +134,7 @@ return {
 			require("todo-comments").setup({})
 		end,
 	},
+
 	-- {
 	--   'sunjon/shade.nvim',
 	--   config = {
@@ -146,6 +147,7 @@ return {
 	--     }
 	--   }
 	-- },
+
 	"folke/which-key.nvim",
 	{
 		"nvim-neorg/neorg",
@@ -355,13 +357,6 @@ return {
 		end,
 	},
 
-	-- {
-	-- 	"ggandor/leap.nvim",
-	-- 	config = function()
-	-- 		require("leap").add_default_mappings()
-	-- 	end,
-	-- },
-
 	{
 		"phaazon/hop.nvim",
 		version = "v2", -- optional but strongly recommended
@@ -370,5 +365,44 @@ return {
 			require("hop").setup({ keys = "etovxqpdgfblzhckisuran" })
 			vim.keymap.set("n", "s", ":HopChar2<cr>")
 		end,
+	},
+
+	{
+		"glepnir/dashboard-nvim",
+		event = "VimEnter",
+		config = function()
+			require("dashboard").setup({
+				theme = "hyper",
+				config = {
+					week_header = {
+						enable = true,
+					},
+					shortcut = {
+						{ desc = "󰊳 Update", group = "@property", action = "Lazy update", key = "u" },
+						{
+							icon = " ",
+							icon_hl = "@variable",
+							desc = "Files",
+							group = "Label",
+							action = "Telescope find_files",
+							key = "f",
+						},
+						{
+							desc = " Apps",
+							group = "DiagnosticHint",
+							action = "Telescope app",
+							key = "a",
+						},
+						{
+							desc = " dotfiles",
+							group = "Number",
+							action = "Telescope dotfiles",
+							key = "d",
+						},
+					},
+				},
+			})
+		end,
+		dependencies = { { "nvim-tree/nvim-web-devicons" } },
 	},
 }
