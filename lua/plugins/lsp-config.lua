@@ -125,8 +125,6 @@ local function setup_null_ls()
 	local null_ls = require("null-ls")
 	null_ls.setup({
 		sources = {
-			null_ls.builtins.diagnostics.pylint, -- for some reason if installed through mason it doesn't get the right virtualenv
-			-- null_ls.builtins.diagnostics.mypy, -- for some reason if installed through mason it doesn't get the right virtualenv
 			null_ls.builtins.code_actions.refactoring,
 		},
 	})
