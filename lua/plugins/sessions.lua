@@ -20,7 +20,7 @@ return {
     dependencies = {
       "ibhagwan/fzf-lua",
     },
-    config = {
+    opts = {
       fzf_winopts = {
         width = 0.5,
       },
