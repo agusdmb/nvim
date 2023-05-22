@@ -328,7 +328,7 @@ return {
 		config = function()
 			-- you can configure Hop the way you like here; see :h hop-config
 			require("hop").setup({ keys = "etovxqpdgfblzhckisuran" })
-			vim.keymap.set("n", "s", ":HopChar2<cr>")
+			vim.keymap.set("n", "s", ":HopChar2MW<cr>")
 		end,
 	},
 
