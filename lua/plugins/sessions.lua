@@ -3,13 +3,13 @@ vim.api.nvim_create_autocmd({ "SessionLoadPost" }, {
 	group = "user_python",
 	pattern = "*",
 	callback = function()
-    if vim.g.Swenv == nil then
-      return
-    end
+		if vim.g.Swenv == nil then
+			return
+		end
 		local ORIGINAL_PATH = vim.fn.getenv("PATH")
 		vim.fn.setenv("VIRTUAL_ENV", vim.g.Swenv)
 		vim.fn.setenv("PATH", vim.g.Swenv .. "/bin" .. ":" .. ORIGINAL_PATH)
-    vim.cmd("LspRestart")
+		vim.cmd("LspRestart")
 	end,
 })
 
@@ -19,7 +19,11 @@ return {
 		dependencies = {
 			"ibhagwan/fzf-lua",
 		},
-		config = true,
+		config = {
+			fzf_winopts = {
+				width = 0.5,
+			},
+		},
 		init = function()
 			local possession = require("nvim-possession")
 			vim.keymap.set("n", "<leader>sl", function()
@@ -40,17 +44,6 @@ return {
 		"AckslD/swenv.nvim",
 		config = function()
 			require("swenv").setup({
-				-- Should return a list of tables with a `name` and a `path` entry each.
-				-- Gets the argument `venvs_path` set below.
-				-- By default just lists the entries in `venvs_path`.
-				-- get_venvs = function(venvs_path)
-				--     return require('swenv.api').get_venvs(venvs_path)
-				-- end,
-				-- Path passed to `get_venvs`.
-				-- venvs_path = vim.fn.expand('~/.pyenv/versions/3.9.12/envs/'),
-				-- Something to do after setting an environment, for example call vim.cmd.LspRestart
-				-- post_set_venv = nil
-				--
 				get_venvs = function(_)
 					local venvs = {}
 					local handle = io.popen('pyenv versions | grep -e "-->"')
