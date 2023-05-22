@@ -399,10 +399,38 @@ return {
 							action = "Telescope dotfiles",
 							key = "d",
 						},
+						{
+							desc = "sessions",
+							action = "lua require('nvim-possession').list()",
+							key = "s",
+						},
 					},
 				},
 			})
 		end,
 		dependencies = { { "nvim-tree/nvim-web-devicons" } },
+	},
+
+	{
+		"gennaro-tedesco/nvim-possession",
+		dependencies = {
+			"ibhagwan/fzf-lua",
+		},
+		config = true,
+		init = function()
+			local possession = require("nvim-possession")
+			vim.keymap.set("n", "<leader>sl", function()
+				possession.list()
+			end)
+			vim.keymap.set("n", "<leader>sn", function()
+				possession.new()
+			end)
+			vim.keymap.set("n", "<leader>su", function()
+				possession.update()
+			end)
+			vim.keymap.set("n", "<leader>sd", function()
+				possession.delete()
+			end)
+		end,
 	},
 }
