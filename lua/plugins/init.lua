@@ -188,7 +188,12 @@ return {
 	},
 	{
 		"dhruvmanila/browser-bookmarks.nvim",
-		dependencies = { "kkharji/sqlite.lua", "nvim-telescope/telescope.nvim" },
+		dependencies = { "nvim-telescope/telescope.nvim" },
+		lazy = true,
+		config = function()
+			require("telescope").load_extension("bookmarks")
+		end,
+		cmd = "BrowserBookmarks",
 	},
 	{
 		"catppuccin/nvim",

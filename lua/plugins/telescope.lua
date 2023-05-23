@@ -41,7 +41,6 @@ return {
 		require("telescope").load_extension("fzf")
 		require("telescope").load_extension("lazygit")
 		require("telescope").load_extension("harpoon")
-		require("telescope").load_extension("bookmarks")
 
 		-- remap to open the Telescope refactoring menu in visual mode
 		vim.api.nvim_set_keymap(
