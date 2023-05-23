@@ -1,15 +1,11 @@
 return {
 	{
 		"ray-x/lsp_signature.nvim",
-		config = function()
-			require("lsp_signature").setup({ hint_enable = true })
-		end,
+		opts = { hint_enable = true },
 	},
 	{
 		"windwp/nvim-autopairs",
-		config = function()
-			require("nvim-autopairs").setup()
-		end,
+		config = true,
 	},
 	{
 		"kdheepak/lazygit.nvim",
@@ -23,7 +19,10 @@ return {
 			vim.notify = require("notify")
 		end,
 	},
-	{ "iamcco/markdown-preview.nvim", build = "cd app && yarn install" },
+	{
+		"iamcco/markdown-preview.nvim",
+		build = "cd app && yarn install",
+	},
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
@@ -53,7 +52,12 @@ return {
 			require("gitsigns").setup()
 		end,
 	},
-	{ "tpope/vim-fugitive", dependencies = { "tpope/vim-rhubarb" } },
+	{
+		"tpope/vim-fugitive",
+		dependencies = {
+			"tpope/vim-rhubarb",
+		},
+	},
 	"rhysd/git-messenger.vim", -- "bronson/vim-trailing-whitespace",
 	"machakann/vim-highlightedyank",
 	{
@@ -171,6 +175,7 @@ return {
 			},
 		},
 		dependencies = { "nvim-lua/plenary.nvim" },
+		cmd = "Neorg",
 	},
 	{
 		"pwntester/octo.nvim",
@@ -179,9 +184,7 @@ return {
 			"nvim-telescope/telescope.nvim",
 			"nvim-tree/nvim-web-devicons", -- optional, for file icons
 		},
-		config = function()
-			require("octo").setup()
-		end,
+		config = true,
 	},
 	{
 		"dhruvmanila/browser-bookmarks.nvim",
