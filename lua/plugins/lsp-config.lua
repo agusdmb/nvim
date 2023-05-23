@@ -113,7 +113,7 @@ local function setup_lspconfig()
 			vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
 			vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
 			vim.keymap.set({ "n", "v" }, "<space>Ca", vim.lsp.buf.code_action, opts)
-			vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+			-- vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 			vim.keymap.set("n", "<space>f", function()
 				vim.lsp.buf.format({ async = true })
 			end, opts)
@@ -125,6 +125,8 @@ local function setup_null_ls()
 	local null_ls = require("null-ls")
 	null_ls.setup({
 		sources = {
+			-- null_ls.builtins.diagnostics.pylint, -- for some reason if installed through mason it doesn't get the right virtualenv
+			-- null_ls.builtins.diagnostics.mypy, -- for some reason if installed through mason it doesn't get the right virtualenv
 			null_ls.builtins.code_actions.refactoring,
 		},
 	})

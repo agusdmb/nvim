@@ -23,7 +23,7 @@ return {
         centralize_selection = false,
         cursorline = true,
         debounce_delay = 15,
-        width = 30,
+        width = 50,
         hide_root_folder = false,
         side = "left",
         preserve_window_proportions = false,
