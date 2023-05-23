@@ -17,5 +17,8 @@ return {
     }
     vim.keymap.set("n", "<c-t>", vim.cmd.ToggleTerm)
     vim.keymap.set("t", "<c-t>", vim.cmd.ToggleTerm)
-  end
+  end,
+  lazy = true,
+  cmd = { "ToggleTerm" },
+  keys = { "<c-t>" },
 }

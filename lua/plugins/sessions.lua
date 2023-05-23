@@ -20,13 +20,13 @@ return {
     dependencies = {
       "ibhagwan/fzf-lua",
     },
-    opts = {
-      fzf_winopts = {
-        width = 0.5,
-      },
-    },
-    init = function()
+    config = function()
       local possession = require("nvim-possession")
+      possession.setup({
+        fzf_winopts = {
+          width = 0.5,
+        },
+      })
       vim.keymap.set("n", "<leader>sl", function()
         possession.list()
       end)
@@ -40,6 +40,13 @@ return {
         possession.delete()
       end)
     end,
+    lazy = true,
+    keys = {
+      "<leader>sl",
+      "<leader>sn",
+      "<leader>su",
+      "<leader>sd",
+    },
   },
   {
     "AckslD/swenv.nvim",
@@ -65,5 +72,7 @@ return {
       })
       vim.cmd([[command! -nargs=0 SetEnv lua require('swenv.api').pick_venv()]])
     end,
+    lazy = true,
+    cmd = { "SetEnv" },
   },
 }

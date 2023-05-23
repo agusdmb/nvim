@@ -6,5 +6,7 @@ return {
   config = function()
     keymap("n", "<leader>h", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
     keymap("n", "<leader>H", ":lua require('harpoon.mark').add_file()<cr>", opts)
-  end
+  end,
+  lazy = true,
+  keys = { "<leader>h", "<leader>H" },
 }

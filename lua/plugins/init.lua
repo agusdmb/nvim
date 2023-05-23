@@ -185,6 +185,8 @@ return {
       "nvim-tree/nvim-web-devicons", -- optional, for file icons
     },
     config = true,
+    lazy = true,
+    cmd = "Octo",
   },
   {
     "dhruvmanila/browser-bookmarks.nvim",
