@@ -73,7 +73,9 @@ return {
   end,
   lazy = true,
   keys = {
-    "gc",
-    "gcc",
+    { "gc",  mode = "n" },
+    { "gcc", mode = "n" },
+    { "gc",  mode = "v" },
+    { "gcc", mode = "v" },
   },
 }
