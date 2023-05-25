@@ -6,6 +6,9 @@ vim.api.nvim_create_autocmd({ "SessionLoadPost" }, {
     if vim.g.Swenv == nil then
       return
     end
+    if vim.g.PythonPath ~= nil then
+      vim.fn.setenv("PYTHONPATH", vim.g.PythonPath)
+    end
     local ORIGINAL_PATH = vim.fn.getenv("PATH")
     vim.fn.setenv("VIRTUAL_ENV", vim.g.Swenv)
     vim.fn.setenv("PATH", vim.g.Swenv .. "/bin" .. ":" .. ORIGINAL_PATH)
