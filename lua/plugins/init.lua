@@ -105,7 +105,7 @@ return {
       { "nvim-lua/plenary.nvim" },
       { "nvim-treesitter/nvim-treesitter" },
     },
-    opts = {},
+    event = "BufRead",
   },
   {
     "github/copilot.vim",
@@ -263,11 +263,9 @@ return {
           },
         },
         -- callback where you can add custom code when the Zen window opens
-        on_open = function()
-        end,
+        on_open = function() end,
         -- callback where you can add custom code when the Zen window closes
-        on_close = function()
-        end,
+        on_close = function() end,
       })
     end,
   },
