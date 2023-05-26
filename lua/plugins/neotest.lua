@@ -47,6 +47,22 @@ return {
         widgets.centered_float(widgets.scopes)
       end)
     end,
+    lazy = true,
+    keys = {
+      "<F5>",
+      "<F10>",
+      "<F11>",
+      "<F12>",
+      -- "<Leader>b",
+      "<Leader>B",
+      -- "<Leader>lp",
+      "<Leader>dr",
+      "<Leader>dl",
+      "<Leader>dh",
+      "<Leader>dp",
+      "<Leader>df",
+      "<Leader>ds",
+    },
   },
   {
     "mfussenegger/nvim-dap-python",
@@ -55,6 +71,7 @@ return {
       require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python")
       require("dap-python").test_runner = "pytest"
     end,
+    lazy = true,
   },
   {
     "rcarriga/nvim-dap-ui",
@@ -71,8 +88,12 @@ return {
         dapui.close()
       end
     end,
+    lazy = true,
   },
-  "nvim-neotest/neotest-go",
+  {
+    "nvim-neotest/neotest-go",
+    lazy = true,
+  },
   {
     "nvim-neotest/neotest",
     dependencies = {
@@ -110,5 +131,7 @@ return {
         { noremap = true, silent = true }
       )
     end,
+    lazy = true,
+    keys = { "<leader>r" },
   },
 }
