@@ -32,7 +32,7 @@ return {
         -- Line-comment keymap
         line = "gc",
         -- Block-comment keymap
-        -- block = "gcb",
+        block = "gCb",
       },
 
       -- Create basic (operator-pending) and extended mappings for NORMAL + VISUAL mode
