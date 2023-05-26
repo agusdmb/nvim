@@ -69,3 +69,5 @@ keymap("n", "<leader>C", ":bd!<cr>")
 keymap("n", "<leader>z", ":tab split<cr>")
 
 keymap("i", "kj", "<esc>")
+
+keymap("n", "J", "J0")
