@@ -1,5 +1,9 @@
 return {
 	{
+		"mbbill/undotree",
+		cmd = "UndotreeToggle",
+	},
+	{
 		"windwp/nvim-autopairs",
 		config = true,
 	},
