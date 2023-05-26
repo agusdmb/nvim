@@ -1,12 +1,17 @@
-local opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
+
+keymap("n", "<leader>h", ":HarpoonOpen<CR>")
+keymap("n", "<leader>H", ":HarpoonMark<CR>")
+keymap("n", "<up>", ":HarpoonPrev<CR>")
+keymap("n", "<down>", ":HarpoonNext<CR>")
 
 return {
   "ThePrimeagen/harpoon",
   config = function()
-    keymap("n", "<leader>h", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
-    keymap("n", "<leader>H", ":lua require('harpoon.mark').add_file()<cr>", opts)
+    vim.api.nvim_create_user_command("HarpoonOpen", "lua require('harpoon.ui').toggle_quick_menu()", {})
+    vim.api.nvim_create_user_command("HarpoonMark", "lua require('harpoon.mark').add_file()", {})
+    vim.api.nvim_create_user_command("HarpoonNext", "lua require('harpoon.ui').nav_next()", {})
+    vim.api.nvim_create_user_command("HarpoonPrev", "lua require('harpoon.ui').nav_prev()", {})
   end,
-  lazy = true,
-  keys = { "<leader>h", "<leader>H" },
+  cmd = { "HarpoonOpen", "HarpoonMark", "HarpoonNext", "HarpoonPrev" },
 }
