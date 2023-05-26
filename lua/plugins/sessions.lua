@@ -1,3 +1,6 @@
+vim.opt.sessionoptions:append("globals")
+vim.opt.sessionoptions:append("winpos")
+
 vim.api.nvim_create_augroup("user_python", {})
 vim.api.nvim_create_autocmd({ "SessionLoadPost" }, {
   group = "user_python",

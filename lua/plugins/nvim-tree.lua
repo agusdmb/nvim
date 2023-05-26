@@ -1,3 +1,6 @@
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeToggle<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "-", ":NvimTreeFindFile<cr>", { noremap = true, silent = true })
 
@@ -226,7 +229,5 @@ return {
         },
       },
     })
-
   end,
-  cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
 }
