@@ -22,6 +22,7 @@ return {
   {
     "iamcco/markdown-preview.nvim",
     build = "cd app && yarn install",
+    cmd = "MarkdownPreview",
   },
   {
     "nvim-lualine/lualine.nvim",
@@ -98,6 +99,7 @@ return {
     config = function()
       require("twilight").setup({})
     end,
+    cmd = { "Twilight", "TwilightEnable" },
   },
   {
     "ThePrimeagen/refactoring.nvim",
