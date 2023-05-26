@@ -1,3 +1,6 @@
+vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeToggle<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "-", ":NvimTreeFindFile<cr>", { noremap = true, silent = true })
+
 return {
   "nvim-tree/nvim-tree.lua",
   dependencies = {
@@ -224,7 +227,6 @@ return {
       },
     })
 
-    vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeToggle<cr>", { noremap = true, silent = true })
-    vim.api.nvim_set_keymap("n", "-", ":NvimTreeFindFile<cr>", { noremap = true, silent = true })
   end,
+  cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
 }
