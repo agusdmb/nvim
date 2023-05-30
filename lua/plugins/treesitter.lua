@@ -3,7 +3,7 @@ return {
 	build = ":TSUpdate",
 	config = function()
 		require("nvim-treesitter.configs").setup({
-			-- ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+			ensure_installed = {"python", "go", "norg", "lua", "go", "json", "sql"},
 			sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
 			-- auto_install = true,
 			ignore_install = { "" }, -- List of parsers to ignore installing

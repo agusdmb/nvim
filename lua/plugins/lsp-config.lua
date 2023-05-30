@@ -53,7 +53,7 @@ end
 
 local function setup_mason_lspconfig()
 	require("mason-lspconfig").setup({
-		ensure_installed = {},
+		ensure_installed = { "lua_ls", "pyright" },
 	})
 
 	require("mason-lspconfig").setup_handlers({
@@ -133,7 +133,9 @@ end
 local function setup_mason_null_ls()
 	require("mason-null-ls").setup({
 		ensure_installed = {
-			-- Opt to list sources here, when available in mason.
+			"mypy",
+			"pylint",
+			"ruff",
 		},
 		automatic_installation = false,
 		handlers = {},
