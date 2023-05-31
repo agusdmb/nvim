@@ -1,9 +1,15 @@
+local vim = vim
+local opt = vim.opt
+
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
 	config = function()
 		require("nvim-treesitter.configs").setup({
-			ensure_installed = {"python", "go", "norg", "lua", "go", "json", "sql"},
+			ensure_installed = { "python", "go", "norg", "lua", "go", "json", "sql", "markdown", "mermaid" },
 			sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
 			-- auto_install = true,
 			ignore_install = { "" }, -- List of parsers to ignore installing
