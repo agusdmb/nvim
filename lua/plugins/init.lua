@@ -53,6 +53,7 @@ return {
 		config = function()
 			require("gitsigns").setup()
 		end,
+		event = "BufRead",
 	},
 	{
 		"tpope/vim-fugitive",
