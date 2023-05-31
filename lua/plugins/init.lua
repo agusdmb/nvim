@@ -365,7 +365,7 @@ return {
 							desc_hl = "Title",
 							key = "s",
 							key_hl = "Number",
-							action = "lua require('nvim-possession').list()",
+							action = "Telescope persisted"
 						},
 						{
 							icon = " ",
