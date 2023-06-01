@@ -310,6 +310,19 @@ return {
 			require("dashboard").setup({
 				theme = "doom",
 				config = {
+					-- header = {
+					-- 	"",
+					-- 	"     ██╗██╗   ██╗███████╗██████╗ ███╗   ██╗███████╗███████╗",
+					-- 	"     ██║██║   ██║██╔════╝██╔══██╗████╗  ██║██╔════╝██╔════╝",
+					-- 	"     ██║██║   ██║█████╗  ██████╔╝██╔██╗ ██║█████╗  ███████╗",
+					-- 	"██   ██║██║   ██║██╔══╝  ██╔══██╗██║╚██╗██║██╔══╝  ╚════██║",
+					-- 	"╚█████╔╝╚██████╔╝███████╗██║  ██║██║ ╚████║███████╗███████║",
+					-- 	" ╚════╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝",
+					-- 	"",
+					-- 	"2023-06-01 08:30:26",
+					-- 	"",
+					-- 	"",
+					-- },
 					week_header = {
 						enable = true,
 						append = {
@@ -365,7 +378,7 @@ return {
 							desc_hl = "Title",
 							key = "s",
 							key_hl = "Number",
-							action = "Telescope persisted"
+							action = "Telescope persisted",
 						},
 						{
 							icon = " ",
@@ -393,6 +406,15 @@ return {
 							key = "u",
 							key_hl = "Number",
 							action = "Lazy sync",
+						},
+						{
+							icon = "󰔟 ",
+							icon_hl = "String",
+							desc = "Profiler",
+							desc_hl = "Title",
+							key = "p",
+							key_hl = "Number",
+							action = "Lazy profile",
 						},
 						{
 							icon = "󰩈 ",
