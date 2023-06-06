@@ -23,7 +23,6 @@ return {
 	{
 		"iamcco/markdown-preview.nvim",
 		build = "cd app && yarn install",
-		cmd = "MarkdownPreview",
 	},
 	{
 		"nvim-lualine/lualine.nvim",
@@ -319,7 +318,6 @@ return {
 					-- 	"╚█████╔╝╚██████╔╝███████╗██║  ██║██║ ╚████║███████╗███████║",
 					-- 	" ╚════╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝",
 					-- 	"",
-					-- 	"2023-06-01 08:30:26",
 					-- 	"",
 					-- 	"",
 					-- },
