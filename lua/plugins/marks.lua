@@ -35,5 +35,6 @@ return {
             },
             mappings = {}
         }
-    end
+    end,
+    event = "BufRead",
 }

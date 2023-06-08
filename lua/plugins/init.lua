@@ -6,7 +6,7 @@ return {
 	{
 		"windwp/nvim-autopairs",
 		config = true,
-    event = "InsertEnter",
+		event = "InsertEnter",
 	},
 	{
 		"kdheepak/lazygit.nvim",
@@ -24,11 +24,11 @@ return {
 	{
 		"iamcco/markdown-preview.nvim",
 		build = "cd app && yarn install",
-    event = "VeryLazy",
+		event = "VeryLazy",
 	},
 	{
 		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons"},
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = { globalstatus = true },
 		event = "BufRead",
 	},
@@ -85,11 +85,8 @@ return {
 	{
 		"kylechui/nvim-surround",
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
-		config = function()
-			require("nvim-surround").setup({
-				-- Configuration here, or leave empty to use defaults
-			})
-		end,
+		config = true,
+    event = "BufRead",
 	},
 	"tpope/vim-repeat",
 	"skywind3000/asyncrun.vim",
@@ -131,9 +128,8 @@ return {
 	},
 	{
 		"simrat39/symbols-outline.nvim",
-		config = function()
-			require("symbols-outline").setup({})
-		end,
+		config = true,
+    event = "BufRead",
 	},
 	{
 		"utilyre/barbecue.nvim",
@@ -297,7 +293,7 @@ return {
 		config = function()
 			require("gh-review").setup()
 		end,
-    event = "VeryLazy",
+		event = "VeryLazy",
 	},
 	{ "stevearc/dressing.nvim", opts = {} },
 	{
@@ -449,5 +445,13 @@ return {
 			})
 		end,
 		dependencies = { { "nvim-tree/nvim-web-devicons" } },
+	},
+
+	{
+		"f-person/git-blame.nvim",
+		event = "BufRead",
+		config = function()
+			-- vim.g.gitblame_delay = 1000
+		end,
 	},
 }
