@@ -51,7 +51,7 @@
   "nvim-tmux-navigation": { "branch": "main", "commit": "543f090a45cef28156162883d2412fffecb6b750" },
   "nvim-tree.lua": { "branch": "master", "commit": "f5d970d4506f385b29534252d8c15a782fa53034" },
   "nvim-treesitter": { "branch": "master", "commit": "2883a9cf8611f94e18870b7647a0fc004ac39110" },
-  "nvim-treesitter-textobjects": { "branch": "master", "commit": "23e883b99228f8d438254e5ef8c897e5e60e75d1" },
+  "nvim-treesitter-textobjects": { "branch": "master", "commit": "2d6d3c7e49a24f6ffbbf7898241fefe9784f61bd" },
   "nvim-web-devicons": { "branch": "master", "commit": "2a125024a137677930efcfdf720f205504c97268" },
   "octo.nvim": { "branch": "master", "commit": "2d2769ff80a82a0da24dcf636ae146f3ed5d7ae5" },
   "persisted.nvim": { "branch": "main", "commit": "536513779be5c067bcc3610aecdcfbe88dd5d85e" },

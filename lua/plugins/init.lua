@@ -6,6 +6,7 @@ return {
 	{
 		"windwp/nvim-autopairs",
 		config = true,
+    event = "InsertEnter",
 	},
 	{
 		"kdheepak/lazygit.nvim",
@@ -23,6 +24,7 @@ return {
 	{
 		"iamcco/markdown-preview.nvim",
 		build = "cd app && yarn install",
+    event = "VeryLazy",
 	},
 	{
 		"nvim-lualine/lualine.nvim",
@@ -295,6 +297,7 @@ return {
 		config = function()
 			require("gh-review").setup()
 		end,
+    event = "VeryLazy",
 	},
 	{ "stevearc/dressing.nvim", opts = {} },
 	{
