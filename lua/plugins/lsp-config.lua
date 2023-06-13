@@ -149,7 +149,11 @@ return {
 		"neovim/nvim-lspconfig",
 		"jose-elias-alvarez/null-ls.nvim",
 		"jay-babu/mason-null-ls.nvim",
-		{ "j-hui/fidget.nvim", config = true },
+		{
+			"j-hui/fidget.nvim",
+			config = true,
+			branch = "legacy",
+		},
 		{ "folke/neodev.nvim", config = true },
 		{
 			"ray-x/lsp_signature.nvim",
