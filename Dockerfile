@@ -5,6 +5,8 @@ RUN addgroup -g 1000 myuser && \
 
 RUN apk add git neovim alpine-sdk yarn unzip wget python3 py3-pip npm lazygit ripgrep zlib-dev openssl-dev --update
 
+RUN npm install -g neovim
+
 USER myuser
 
 WORKDIR /home/myuser
