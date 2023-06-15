@@ -31,7 +31,7 @@ local options = {
 	showtabline = 1,
 	linebreak = true,
 	foldenable = true,
-  foldlevel = 99,
+	foldlevel = 99,
 	conceallevel = 1, -- it was 0 so that `` is visible in markdown files
 	concealcursor = "n", -- it was 0 so that `` is visible in markdown files
 }
