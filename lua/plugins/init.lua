@@ -22,7 +22,7 @@ return {
 		config = function()
 			vim.notify = require("notify")
 		end,
-    event = "VeryLazy",
+		event = "VeryLazy",
 	},
 	{
 		"iamcco/markdown-preview.nvim",
@@ -69,6 +69,7 @@ return {
 	{
 		"rhysd/git-messenger.vim",
 		cmd = "GitMessenger",
+		keys = { { "<leader>gm", nil, desc = "Git Messenger" } },
 	},
 	{
 		"machakann/vim-highlightedyank",
