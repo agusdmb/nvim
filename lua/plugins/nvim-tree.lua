@@ -230,6 +230,4 @@ return {
 			},
 		})
 	end,
-	-- event = "VeryLazy",
-	-- cmd = { "NvimTreeToggle", "NvimTreeFindFile" },  -- for some reason i can't make it work lazy
 }
