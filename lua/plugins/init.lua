@@ -22,6 +22,7 @@ return {
 		config = function()
 			vim.notify = require("notify")
 		end,
+    event = "VeryLazy",
 	},
 	{
 		"iamcco/markdown-preview.nvim",
