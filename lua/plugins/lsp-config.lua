@@ -212,5 +212,5 @@ return {
 		setup_null_ls()
 	end,
 	event = "BufRead",
-	cmd = "LspRestart",
+	cmd = {"LspRestart", "Mason"},
 }
