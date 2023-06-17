@@ -11,9 +11,11 @@ return {
 	{
 		"kdheepak/lazygit.nvim",
 		config = function()
-			vim.api.nvim_set_keymap("n", "<leader>l", ":LazyGit<cr>", { noremap = true, silent = true })
+			vim.keymap.set("n", "<leader>l", ":LazyGit<cr>")
+			require("telescope").load_extension("lazygit")
 		end,
 		keys = { "<leader>l" },
+		cmd = { "LazyGit", "LazyGitFilterCurrentFile" },
 	},
 	{
 		"rcarriga/nvim-notify",
@@ -86,7 +88,7 @@ return {
 		"kylechui/nvim-surround",
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
 		config = true,
-    event = "BufRead",
+		event = "BufRead",
 	},
 	"tpope/vim-repeat",
 	"skywind3000/asyncrun.vim",
@@ -129,7 +131,7 @@ return {
 	{
 		"simrat39/symbols-outline.nvim",
 		config = true,
-    event = "BufRead",
+		event = "BufRead",
 	},
 	{
 		"utilyre/barbecue.nvim",

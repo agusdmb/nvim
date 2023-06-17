@@ -12,6 +12,7 @@ return {
     vim.api.nvim_create_user_command("HarpoonMark", "lua require('harpoon.mark').add_file()", {})
     vim.api.nvim_create_user_command("HarpoonNext", "lua require('harpoon.ui').nav_next()", {})
     vim.api.nvim_create_user_command("HarpoonPrev", "lua require('harpoon.ui').nav_prev()", {})
+		require("telescope").load_extension("harpoon")
   end,
   cmd = { "HarpoonOpen", "HarpoonMark", "HarpoonNext", "HarpoonPrev" },
 }

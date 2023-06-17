@@ -22,11 +22,14 @@ vim.api.nvim_create_autocmd({ "SessionLoadPost" }, {
 return {
 	{
 		"olimorris/persisted.nvim",
-		opts = {
-			use_git_branch = false,
-			autosave = false,
-			autoload = true,
-		},
+		config = function()
+			require("persisted").setup({
+				use_git_branch = false,
+				autosave = false,
+				autoload = true,
+			})
+			require("telescope").load_extension("persisted")
+		end,
 	},
 	-- {
 	-- 	"AckslD/swenv.nvim",
