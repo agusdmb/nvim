@@ -95,6 +95,7 @@ return {
 	},
 	{
 		"nvim-neotest/neotest-go",
+		event = "VeryLazy",
 	},
 	{
 		"nvim-neotest/neotest",

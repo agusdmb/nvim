@@ -49,6 +49,7 @@ return {
 				},
 			})
 		end,
+		event = "VeryLazy",
 	},
 	{
 		"lewis6991/gitsigns.nvim",
@@ -62,14 +63,22 @@ return {
 		dependencies = {
 			"tpope/vim-rhubarb",
 		},
+		cmd = { "G", "Git", "Gdiffsplit", "Gread", "Gwrite", "Ggrep", "GMove", "GDelete", "GBrowse" },
 	},
-	"rhysd/git-messenger.vim",
-	"machakann/vim-highlightedyank",
+	{
+		"rhysd/git-messenger.vim",
+		cmd = "GitMessenger",
+	},
+	{
+		"machakann/vim-highlightedyank",
+		event = "VeryLazy",
+	},
 	{
 		"petertriho/nvim-scrollbar",
 		config = function()
 			require("scrollbar").setup()
 		end,
+		event = "VeryLazy",
 	},
 
 	{
@@ -77,12 +86,14 @@ return {
 		config = function()
 			require("neoscroll").setup()
 		end,
+		event = "VeryLazy",
 	},
 	{
 		"nacro90/numb.nvim",
 		config = function()
 			require("numb").setup()
 		end,
+		event = "VeryLazy",
 	},
 	{
 		"kylechui/nvim-surround",
@@ -90,11 +101,22 @@ return {
 		config = true,
 		event = "BufRead",
 	},
-	"tpope/vim-repeat",
-	"skywind3000/asyncrun.vim",
-	"bronson/vim-visual-star-search",
-	"junegunn/vim-easy-align",
-
+	{
+		"tpope/vim-repeat",
+		event = "VeryLazy",
+	},
+	{
+		"skywind3000/asyncrun.vim",
+		cmd = { "AsyncRun", "AsyncStop", "AsyncTask" },
+	},
+	{
+		"bronson/vim-visual-star-search",
+		keys = { "*", "#" },
+	},
+	{
+		"junegunn/vim-easy-align",
+		keys = { "ga" },
+	},
 	{
 		"folke/twilight.nvim",
 		opts = {
@@ -151,7 +173,7 @@ return {
 		config = function()
 			require("todo-comments").setup({})
 		end,
-    event = "BufRead",
+		event = "BufRead",
 	},
 
 	-- {
@@ -167,7 +189,6 @@ return {
 	--   }
 	-- },
 
-	"folke/which-key.nvim",
 	{
 		"nvim-neorg/neorg",
 		build = ":Neorg sync-parsers",
@@ -289,6 +310,7 @@ return {
 		config = function()
 			require("which-key").setup({})
 		end,
+		event = "VeryLazy",
 	},
 	-- {
 	-- 	dir = "/home/agusdmb/dev/gh-review/",
@@ -298,7 +320,11 @@ return {
 	-- 	end,
 	-- 	event = "VeryLazy",
 	-- },
-	{ "stevearc/dressing.nvim", opts = {} },
+	{
+		"stevearc/dressing.nvim",
+		opts = {},
+		event = "VeryLazy",
+	},
 	{
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
