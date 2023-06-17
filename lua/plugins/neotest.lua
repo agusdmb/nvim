@@ -22,7 +22,7 @@ return {
 			-- end)
 			vim.keymap.set("n", "<Leader>B", function()
 				require("dap").toggle_breakpoint()
-			end)
+			end, { desc = "Toggle breakpoint" })
 			-- vim.keymap.set("n", "<Leader>lp", function()
 			-- 	require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
 			-- end)
@@ -53,7 +53,7 @@ return {
 			-- "<F11>",
 			-- "<F12>",
 			-- "<Leader>b",
-			"<Leader>B",
+			{ "<Leader>B", desc = "Toggle breakpoint" },
 			-- "<Leader>lp",
 			-- "<Leader>dr",
 			-- "<Leader>dl",
