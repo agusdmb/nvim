@@ -71,7 +71,7 @@ return {
 			require("dap-python").test_runner = "pytest"
 		end,
 		keys = {
-			"<Leader>B",
+			{ "<Leader>B", desc = "Toggle breakpoint" },
 		},
 	},
 	{
@@ -90,7 +90,7 @@ return {
 			end
 		end,
 		keys = {
-			"<Leader>B",
+			{ "<Leader>B", desc = "Toggle breakpoint" },
 		},
 	},
 	{

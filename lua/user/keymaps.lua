@@ -20,8 +20,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>")
 keymap("n", "<C-Right>", ":vertical resize +2<CR>")
 
 -- Navigate buffers
-keymap("n", "gb", ":bn<cr>")
-keymap("n", "gB", ":bp<cr>")
+keymap("n", "gb", ":bn<cr>", { desc = "Next buffer" })
+keymap("n", "gB", ":bp<cr>", { desc = "Previous buffer" })
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi")
