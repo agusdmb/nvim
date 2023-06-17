@@ -4,6 +4,33 @@ vim.fn.sign_define("DapStopped", { text = "", texthl = "", linehl = "", numhl
 return {
 	{
 		"mfussenegger/nvim-dap",
+		dependencies = {
+			{
+				"mfussenegger/nvim-dap-python",
+				config = function()
+					local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
+					require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python")
+					require("dap-python").test_runner = "pytest"
+					vim.api.nvim_create_user_command("DebugPython", "lua require('dap-python').test_method()", {})
+				end,
+			},
+			{
+				"rcarriga/nvim-dap-ui",
+				config = function()
+					require("dapui").setup()
+					local dap, dapui = require("dap"), require("dapui")
+					dap.listeners.after.event_initialized["dapui_config"] = function()
+						dapui.open()
+					end
+					dap.listeners.before.event_terminated["dapui_config"] = function()
+						dapui.close()
+					end
+					dap.listeners.before.event_exited["dapui_config"] = function()
+						dapui.close()
+					end
+				end,
+			},
+		},
 		config = function()
 			-- vim.keymap.set("n", "<F5>", function()
 			-- 	require("dap").continue()
@@ -64,36 +91,6 @@ return {
 		},
 	},
 	{
-		"mfussenegger/nvim-dap-python",
-		config = function()
-			local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
-			require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python")
-			require("dap-python").test_runner = "pytest"
-		end,
-		keys = {
-			{ "<Leader>B", desc = "Toggle breakpoint" },
-		},
-	},
-	{
-		"rcarriga/nvim-dap-ui",
-		config = function()
-			require("dapui").setup()
-			local dap, dapui = require("dap"), require("dapui")
-			dap.listeners.after.event_initialized["dapui_config"] = function()
-				dapui.open()
-			end
-			dap.listeners.before.event_terminated["dapui_config"] = function()
-				dapui.close()
-			end
-			dap.listeners.before.event_exited["dapui_config"] = function()
-				dapui.close()
-			end
-		end,
-		keys = {
-			{ "<Leader>B", desc = "Toggle breakpoint" },
-		},
-	},
-	{
 		"nvim-neotest/neotest",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -123,9 +120,7 @@ return {
 					require("neotest-go"),
 				},
 			})
-			vim.api.nvim_create_user_command("NeotestRun", "lua require('neotest').run.run()", {})
-			vim.api.nvim_create_user_command("NeotestOpen", "lua require('neotest').summary.open()", {})
 		end,
-		cmd = { "NeotestRun", "NeotestOpen" },
+		cmd = { "Neotest" },
 	},
 }
