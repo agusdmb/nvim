@@ -11,7 +11,7 @@ return {
 	{
 		"kdheepak/lazygit.nvim",
 		config = function()
-			vim.keymap.set("n", "<leader>l", ":LazyGit<cr>")
+			vim.keymap.set("n", "<leader>l", ":LazyGit<cr>", { silent = true, noremap = true })
 			require("telescope").load_extension("lazygit")
 		end,
 		keys = { { "<leader>l", nil, desc = "LazyGit" } },
@@ -56,7 +56,7 @@ return {
 		config = function()
 			require("gitsigns").setup()
 		end,
-		event = "BufRead",
+		event = "VeryLazy",
 	},
 	{
 		"tpope/vim-fugitive",
@@ -78,7 +78,7 @@ return {
 		config = function()
 			require("scrollbar").setup()
 		end,
-		event = "VeryLazy",
+		event = "BufRead",
 	},
 
 	{
@@ -99,7 +99,7 @@ return {
 		"kylechui/nvim-surround",
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
 		config = true,
-		event = "BufRead",
+		event = "VeryLazy",
 	},
 	{
 		"tpope/vim-repeat",
@@ -153,7 +153,7 @@ return {
 	{
 		"simrat39/symbols-outline.nvim",
 		config = true,
-		event = "BufRead",
+		event = "VeryLazy",
 	},
 	{
 		"utilyre/barbecue.nvim",
@@ -165,7 +165,7 @@ return {
 		config = function()
 			require("barbecue").setup()
 		end,
-		event = "BufRead",
+		event = "VeryLazy",
 	},
 	{
 		"folke/todo-comments.nvim",
@@ -173,7 +173,7 @@ return {
 		config = function()
 			require("todo-comments").setup({})
 		end,
-		event = "BufRead",
+		event = "VeryLazy",
 	},
 
 	-- {
@@ -436,9 +436,25 @@ return {
 
 	{
 		"f-person/git-blame.nvim",
-		event = "BufRead",
+		event = "VeryLazy",
 		config = function()
 			-- vim.g.gitblame_delay = 1000
 		end,
+	},
+
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {
+			-- add any options here
+		},
+		dependencies = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+			-- OPTIONAL:
+			--   `nvim-notify` is only needed, if you want to use the notification view.
+			--   If not available, we use `mini` as the fallback
+			"rcarriga/nvim-notify",
+		},
 	},
 }

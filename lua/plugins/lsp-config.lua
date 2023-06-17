@@ -32,13 +32,13 @@ local function basic_setup()
 
 	vim.diagnostic.config(config)
 
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = "rounded",
-	})
+	-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+	-- 	border = "rounded",
+	-- })
 
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = "rounded",
-	})
+	-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+	-- 	border = "rounded",
+	-- })
 end
 
 local function setup_mason()
@@ -101,7 +101,6 @@ local function setup_lspconfig()
 
 			-- Buffer local mappings.
 			-- See `:help vim.lsp.*` for documentation on any of the below functions
-			local opts = { buffer = ev.buf }
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = ev.buf, desc = "Go to declaration" })
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = ev.buf, desc = "Go to definition" })
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = ev.buf, desc = "Hover" })
@@ -159,10 +158,10 @@ return {
 			branch = "legacy",
 		},
 		{ "folke/neodev.nvim", config = true },
-		{
-			"ray-x/lsp_signature.nvim",
-			opts = { hint_enable = true },
-		},
+		-- {
+		-- 	"ray-x/lsp_signature.nvim",
+		-- 	opts = { hint_enable = true },
+		-- },
 		{
 			"ThePrimeagen/refactoring.nvim",
 			config = function()
@@ -212,7 +211,7 @@ return {
 	},
 	config = function()
 		-- Order matters here
-		basic_setup()
+		-- basic_setup()
 		setup_mason()
 		setup_mason_lspconfig()
 		setup_lspconfig()
