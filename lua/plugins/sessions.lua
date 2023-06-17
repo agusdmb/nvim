@@ -28,7 +28,6 @@ return {
 				autosave = false,
 				autoload = true,
 			})
-			require("telescope").load_extension("persisted")
 		end,
 	},
 	-- {
