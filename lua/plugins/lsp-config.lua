@@ -53,7 +53,7 @@ end
 
 local function setup_mason_lspconfig()
 	require("mason-lspconfig").setup({
-		ensure_installed = { "lua_ls", "pyright" },
+		ensure_installed = {},
 	})
 
 	require("mason-lspconfig").setup_handlers({
@@ -125,6 +125,7 @@ local function setup_null_ls()
 	local null_ls = require("null-ls")
 	null_ls.setup({
 		sources = {
+			-- null_ls.builtins.diagnostics.pylint,
 			null_ls.builtins.code_actions.refactoring,
 		},
 	})
@@ -132,11 +133,7 @@ end
 
 local function setup_mason_null_ls()
 	require("mason-null-ls").setup({
-		ensure_installed = {
-			"mypy",
-			"pylint",
-			"ruff",
-		},
+		ensure_installed = {},
 		automatic_installation = false,
 		handlers = {},
 	})
