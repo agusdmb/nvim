@@ -19,6 +19,8 @@ vim.api.nvim_create_autocmd({ "SessionLoadPost" }, {
 	end,
 })
 
+vim.api.nvim_create_user_command("SetVirtualEnv", 'lua vim.g.VirtualEnv = vim.fn.getcwd() .. "/.venv"', {})
+
 return {
 	{
 		"olimorris/persisted.nvim",
@@ -30,30 +32,4 @@ return {
 			})
 		end,
 	},
-	-- {
-	-- 	"AckslD/swenv.nvim",
-	-- 	config = function()
-	-- 		require("swenv").setup({
-	-- 			-- get_venvs = function(_)
-	-- 			-- 	local venvs = {}
-	-- 			-- 	local handle = io.popen('pyenv versions | grep -e "-->"')
-	-- 			-- 	local output = handle:read("*a")
-	-- 			-- 	handle:close()
-	-- 			--
-	-- 			-- 	for name, path in output:gmatch("(%S+)%s+-%->%s+(%S+)") do
-	-- 			-- 		table.insert(venvs, { name = name, path = path })
-	-- 			-- 	end
-	-- 			--
-	-- 			-- 	return venvs
-	-- 			-- end,
-	-- 			-- venvs_path = vim.fn.expand("~/.pyenv/"),
-	-- 			-- post_set_venv = function(venv)
-	-- 			-- 	vim.cmd("LspRestart")
-	-- 			-- 	vim.g.Swenv = venv.path
-	-- 			-- end,
-	-- 		})
-	-- 		vim.cmd([[command! -nargs=0 SetEnv lua require('swenv.api').pick_venv()]])
-	-- 	end,
-	-- 	cmd = { "SetEnv" },
-	-- },
 }
