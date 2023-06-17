@@ -14,7 +14,7 @@ return {
 			vim.keymap.set("n", "<leader>l", ":LazyGit<cr>")
 			require("telescope").load_extension("lazygit")
 		end,
-		keys = { "<leader>l" },
+		keys = { { "<leader>l", nil, desc = "LazyGit" } },
 		cmd = { "LazyGit", "LazyGitFilterCurrentFile" },
 	},
 	{
