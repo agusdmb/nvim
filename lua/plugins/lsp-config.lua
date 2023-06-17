@@ -176,31 +176,31 @@ return {
 					"n",
 					"gpd",
 					"<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
-					{ noremap = true, silent = true }
+					{ noremap = true, silent = true, desc = "Preview definition" }
 				)
 				vim.api.nvim_set_keymap(
 					"n",
 					"gpt",
 					"<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>",
-					{ noremap = true, silent = true }
+					{ noremap = true, silent = true, desc = "Preview type definition" }
 				)
 				vim.api.nvim_set_keymap(
 					"n",
 					"gpi",
 					"<cmd>lua require('goto-preview').goto_preview_implementation()<CR>",
-					{ noremap = true, silent = true }
+					{ noremap = true, silent = true, desc = "Preview implementation" }
 				)
 				vim.api.nvim_set_keymap(
 					"n",
 					"gP",
 					"<cmd>lua require('goto-preview').close_all_win()<CR>",
-					{ noremap = true, silent = true }
+					{ noremap = true, silent = true, desc = "Close all windows" }
 				)
 				vim.api.nvim_set_keymap(
 					"n",
 					"gpr",
 					"<cmd>lua require('goto-preview').goto_preview_references()<CR>",
-					{ noremap = true, silent = true }
+					{ noremap = true, silent = true, desc = "Preview references" }
 				)
 			end,
 		},
