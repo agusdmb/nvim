@@ -28,7 +28,7 @@ return {
 
 		local builtin = require("telescope.builtin")
 
-		vim.keymap.set("n", "<c-p>", builtin.find_files)
+		vim.keymap.set("n", "<c-p>", builtin.find_files, { desc = "find files" })
 		vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "buffers" })
 		vim.keymap.set("n", "<leader>t", builtin.tags, { desc = "tags" })
 		vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "references" })
@@ -46,11 +46,11 @@ return {
 		require("telescope").load_extension("persisted")
 
 		-- remap to open the Telescope refactoring menu in visual mode
-		vim.api.nvim_set_keymap(
+		vim.keymap.set(
 			"v",
 			"<leader>R",
 			"<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
-			{ noremap = true }
+			{ noremap = true, desc = "refactoring" }
 		)
 	end,
 	lazy = true,

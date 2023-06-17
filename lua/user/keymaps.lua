@@ -57,16 +57,16 @@ keymap("n", "<leader>w", ":update<cr>")
 keymap("n", "<leader>v", ":vert split<cr>")
 keymap("n", "<leader>o", ":split<cr>")
 
-keymap("n", "<leader>y", '"+y')
-keymap("v", "<leader>y", '"+y')
-keymap("n", "<leader>p", '"+p')
+keymap("n", "<leader>y", '"+y', { desc = "Copy to clipboard" })
+keymap("v", "<leader>y", '"+y', { desc = "Copy to clipboard" })
+keymap("n", "<leader>p", '"+p', { desc = "Paste from clipboard" })
 
 -- keymap('n', '<leader>', ':nohlsearch<cr>')
 
-keymap("n", "<leader>c", ":bd<cr>")
-keymap("n", "<leader>C", ":bd!<cr>")
+keymap("n", "<leader>c", ":bd<cr>", { desc = "Close buffer" })
+keymap("n", "<leader>C", ":bd!<cr>", { desc = "Force close buffer" })
 
-keymap("n", "<leader>z", ":tab split<cr>")
+keymap("n", "<leader>z", ":tab split<cr>", { desc = "Zoom in tab" })
 
 -- keymap("i", "kj", "<esc>")
 
