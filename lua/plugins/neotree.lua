@@ -8,6 +8,11 @@ return {
 		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 		"MunifTanjim/nui.nvim",
 	},
+	opts = {
+		filesystem = {
+			follow_current_file = true,
+		},
+	},
 	keys = {
 		{ "<leader>e", ":Neotree toggle dir=./ <CR>", noremap = true, silent = true },
 	},
