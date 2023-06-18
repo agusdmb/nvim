@@ -39,6 +39,7 @@ local function basic_setup()
 	-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
 	-- 	border = "rounded",
 	-- })
+
 end
 
 local function setup_mason()
@@ -211,7 +212,7 @@ return {
 	},
 	config = function()
 		-- Order matters here
-		-- basic_setup()
+		basic_setup()
 		setup_mason()
 		setup_mason_lspconfig()
 		setup_lspconfig()
