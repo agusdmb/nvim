@@ -17,13 +17,6 @@ return {
 		keys = { { "<leader>l", nil, desc = "LazyGit" } },
 		cmd = { "LazyGit", "LazyGitFilterCurrentFile" },
 	},
-	-- {
-	-- 	"rcarriga/nvim-notify",
-	-- 	config = function()
-	-- 		vim.notify = require("notify")
-	-- 	end,
-	-- 	event = "VeryLazy",
-	-- },
 	{
 		"iamcco/markdown-preview.nvim",
 		build = "cd app && yarn install",
@@ -81,6 +74,7 @@ return {
 			require("scrollbar").setup()
 		end,
 		event = "BufRead",
+		enabled = false,
 	},
 
 	{
@@ -178,18 +172,19 @@ return {
 		event = "VeryLazy",
 	},
 
-	-- {
-	--   'sunjon/shade.nvim',
-	--   config = {
-	--     overlay_opacity = 50,
-	--     opacity_step = 1,
-	--     keys = {
-	--       brightness_up   = '<C-Up>',
-	--       brightness_down = '<C-Down>',
-	--       toggle          = '<Leader>s',
-	--     }
-	--   }
-	-- },
+	{
+		"sunjon/shade.nvim",
+		config = {
+			overlay_opacity = 50,
+			opacity_step = 1,
+			keys = {
+				brightness_up = "<C-Up>",
+				brightness_down = "<C-Down>",
+				toggle = "<Leader>s",
+			},
+		},
+		enabled = false,
+	},
 
 	{
 		"nvim-neorg/neorg",
@@ -340,6 +335,7 @@ return {
 			})
 		end,
 		cmd = { "Trouble", "TroubleToggle", "TroubleRefresh" },
+		enabled = false,
 	},
 	{
 		"phaazon/hop.nvim",
