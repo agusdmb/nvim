@@ -19,7 +19,22 @@ vim.api.nvim_create_autocmd({ "SessionLoadPost" }, {
 	end,
 })
 
-vim.api.nvim_create_user_command("SetVirtualEnv", 'lua vim.g.VirtualEnv = vim.fn.getcwd() .. "/.venv"', {})
+-- vim.api.nvim_create_user_command("SetVirtualEnv", 'lua vim.g.VirtualEnv = vim.fn.getcwd() .. "/.venv"', {})
+
+local group = vim.api.nvim_create_augroup("PersistedHooks", {})
+
+vim.api.nvim_create_autocmd({ "User" }, {
+	pattern = "PersistedSavePre",
+	group = group,
+	callback = function()
+		if vim.fn.getenv("VIRTUAL_ENV") ~= "" then
+			vim.g.VirtualEnv = vim.fn.getenv("VIRTUAL_ENV")
+		end
+		if vim.fn.getenv("PYTHONPATH") ~= "" then
+			vim.g.PythonPath = vim.fn.getenv("PYTHONPATH")
+		end
+	end,
+})
 
 return {
 	{
