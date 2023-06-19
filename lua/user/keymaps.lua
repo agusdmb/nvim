@@ -1,8 +1,6 @@
 -- Shorten function name
 local keymap = vim.keymap.set
 
-vim.o.silent = true
-
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
 vim.g.mapleader = " "
