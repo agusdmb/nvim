@@ -37,14 +37,13 @@ vim.api.nvim_create_autocmd({ "User" }, {
 })
 
 return {
-	{
-		"olimorris/persisted.nvim",
-		config = function()
-			require("persisted").setup({
-				use_git_branch = false,
-				autosave = false,
-				autoload = true,
-			})
-		end,
-	},
+	"olimorris/persisted.nvim",
+	config = function()
+		require("persisted").setup({
+			use_git_branch = false,
+			autosave = false,
+			autoload = false,
+		})
+	end,
+	event = "VeryLazy",
 }
