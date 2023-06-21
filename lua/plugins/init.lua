@@ -14,12 +14,6 @@ return {
 		event = "VeryLazy",
 	},
 	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = { globalstatus = true },
-		event = "BufRead",
-	},
-	{
 		"alexghergh/nvim-tmux-navigation",
 		config = function()
 			require("nvim-tmux-navigation").setup({
@@ -33,33 +27,6 @@ return {
 					next = "<C-Space>",
 				},
 			})
-		end,
-		event = "VeryLazy",
-	},
-	{
-		"machakann/vim-highlightedyank",
-		event = "VeryLazy",
-	},
-	{
-		"petertriho/nvim-scrollbar",
-		config = function()
-			require("scrollbar").setup()
-		end,
-		event = "BufRead",
-		enabled = false,
-	},
-
-	{
-		"karb94/neoscroll.nvim",
-		config = function()
-			require("neoscroll").setup()
-		end,
-		event = "VeryLazy",
-	},
-	{
-		"nacro90/numb.nvim",
-		config = function()
-			require("numb").setup()
 		end,
 		event = "VeryLazy",
 	},
@@ -86,31 +53,6 @@ return {
 		keys = { "ga" },
 	},
 	{
-		"folke/twilight.nvim",
-		opts = {
-			dimming = {
-				alpha = 0.25, -- amount of dimming
-				-- we try to get the foreground from the highlight groups or fallback color
-				color = { "Normal", "ffffff" },
-				term_bg = "000000", -- if guibg=NONE, this will be used to calculate text color
-				inactive = false, -- when true, other windows will be fully dimmed (unless they contain the same buffer)
-			},
-			context = 10, -- amount of lines we will try to show around the current line
-			treesitter = true, -- use treesitter when available for the filetype
-			-- treesitter is used to automatically expand the visible text,
-			-- but you can further control the types of nodes that should always be fully expanded
-			expand = { -- for treesitter, we we always try to expand to the top-most ancestor with these types
-				"function",
-				"method",
-				"table",
-				"if_statement",
-				"method_definition",
-			},
-			exclude = {}, -- exclude these filetypes
-		},
-		cmd = { "Twilight", "TwilightEnable" },
-	},
-	{
 		"github/copilot.vim",
 		config = function()
 			vim.g.copilot_no_tab_map = true
@@ -123,41 +65,6 @@ return {
 		config = true,
 		event = "VeryLazy",
 	},
-	{
-		"utilyre/barbecue.nvim",
-		version = "*",
-		dependencies = {
-			"SmiteshP/nvim-navic",
-			"nvim-tree/nvim-web-devicons", -- optional dependency
-		},
-		config = function()
-			require("barbecue").setup()
-		end,
-		event = "VeryLazy",
-	},
-	{
-		"folke/todo-comments.nvim",
-		dependencies = "nvim-lua/plenary.nvim",
-		config = function()
-			require("todo-comments").setup({})
-		end,
-		event = "VeryLazy",
-	},
-
-	{
-		"sunjon/shade.nvim",
-		config = {
-			overlay_opacity = 50,
-			opacity_step = 1,
-			keys = {
-				brightness_up = "<C-Up>",
-				brightness_down = "<C-Down>",
-				toggle = "<Leader>s",
-			},
-		},
-		enabled = false,
-	},
-
 	{
 		"nvim-neorg/neorg",
 		build = ":Neorg sync-parsers",
@@ -200,23 +107,7 @@ return {
 		end,
 		cmd = "BrowserBookmarks",
 	},
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		config = function()
-			vim.cmd.colorscheme("catppuccin")
-		end,
-	},
 
-	{
-		"folke/which-key.nvim",
-		init = function()
-			vim.o.timeout = true
-			vim.o.timeoutlen = 300
-		end,
-		opts = {},
-		event = "VeryLazy",
-	},
 	-- {
 	-- 	dir = "/home/agusdmb/dev/gh-review/",
 	-- 	dependencies = "nvim-lua/plenary.nvim",
@@ -225,11 +116,7 @@ return {
 	-- 	end,
 	-- 	event = "VeryLazy",
 	-- },
-	{
-		"stevearc/dressing.nvim",
-		opts = {},
-		event = "VeryLazy",
-	},
+
 	{
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -243,6 +130,7 @@ return {
 		cmd = { "Trouble", "TroubleToggle", "TroubleRefresh" },
 		enabled = false,
 	},
+
 	{
 		"phaazon/hop.nvim",
 		version = "v2", -- optional but strongly recommended
