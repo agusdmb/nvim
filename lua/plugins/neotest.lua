@@ -1,6 +1,8 @@
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "LspDiagnosticsError", linehl = "", numhl = "" })
 vim.fn.sign_define("DapStopped", { text = "", texthl = "", linehl = "", numhl = "" })
 
+vim.api.nvim_create_user_command("DebugPython", "lua require('dap-python').test_method()", {})
+
 return {
 	{
 		"mfussenegger/nvim-dap",
@@ -11,7 +13,6 @@ return {
 					local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
 					require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python")
 					require("dap-python").test_runner = "pytest"
-					vim.api.nvim_create_user_command("DebugPython", "lua require('dap-python').test_method()", {})
 				end,
 			},
 			{
