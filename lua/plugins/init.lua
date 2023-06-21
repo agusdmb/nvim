@@ -234,7 +234,6 @@ return {
 		config = function()
 			vim.cmd.colorscheme("catppuccin")
 		end,
-		event = "VeryLazy",
 	},
 	{
 		"folke/zen-mode.nvim",
