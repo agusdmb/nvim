@@ -27,6 +27,12 @@ return {
 					hidden = true,
 				},
 			},
+			defaults = {
+				layout_strategy = "vertical",
+				layout_config = {
+					preview_height = 0.7,
+				},
+			},
 		})
 
 		local builtin = require("telescope.builtin")
