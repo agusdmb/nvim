@@ -107,4 +107,20 @@ return {
 		opts = {},
 		event = "VeryLazy",
 	},
+	{
+		"akinsho/bufferline.nvim",
+		version = "*",
+		dependencies = "nvim-tree/nvim-web-devicons",
+		opts = {
+			options = {
+				separator_style = "slant",
+				diagnostics = "nvim_lsp",
+				hover = {
+					enabled = true,
+					delay = 200,
+					reveal = { "close" },
+				},
+			},
+		},
+	},
 }

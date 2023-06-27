@@ -34,6 +34,7 @@ local options = {
 	foldlevel = 99,
 	conceallevel = 1, -- it was 0 so that `` is visible in markdown files
 	concealcursor = "n", -- it was 0 so that `` is visible in markdown files
+  mousemoveevent = true,
 }
 
 vim.opt.shortmess:append("c")
