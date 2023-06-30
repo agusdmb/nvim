@@ -122,5 +122,6 @@ return {
 				},
 			},
 		},
+    event = "BufRead",
 	},
 }
