@@ -39,7 +39,6 @@ local function basic_setup()
 	-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
 	-- 	border = "rounded",
 	-- })
-
 end
 
 local function setup_mason()
@@ -76,6 +75,18 @@ local function setup_mason_lspconfig()
 								[vim.fn.stdpath("config") .. "/lua"] = true,
 							},
 							checkThirdParty = false,
+						},
+					},
+				},
+			})
+		end,
+		["pyright"] = function()
+			require("lspconfig")["pyright"].setup({
+				settings = {
+					python = {
+						analysis = {
+							diagnosticMode = "openFilesOnly",
+							-- typeCheckingMode = "strict",
 						},
 					},
 				},
@@ -132,8 +143,13 @@ local function setup_null_ls()
 	local null_ls = require("null-ls")
 	null_ls.setup({
 		sources = {
+			null_ls.builtins.diagnostics.ruff,
 			-- null_ls.builtins.diagnostics.pylint,
 			null_ls.builtins.code_actions.refactoring,
+			null_ls.builtins.formatting.black,
+			null_ls.builtins.formatting.isort,
+			null_ls.builtins.formatting.stylua,
+			null_ls.builtins.formatting.prettier,
 		},
 	})
 end
