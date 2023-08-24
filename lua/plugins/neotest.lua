@@ -121,7 +121,14 @@ return {
 					require("neotest-go"),
 				},
 			})
+      vim.keymap.set(
+        "n",
+        "<leader>T",
+        ":Neotest summary<CR>",
+        { noremap = true, desc = "Neotest summary" }
+      )
 		end,
 		cmd = { "Neotest" },
+    keys = { "<Leader>T", desc = "Neotest summary" },
 	},
 }
