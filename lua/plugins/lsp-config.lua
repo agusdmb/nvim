@@ -144,10 +144,11 @@ local function setup_null_ls()
 	null_ls.setup({
 		sources = {
 			null_ls.builtins.diagnostics.ruff,
+			null_ls.builtins.diagnostics.mypy,
 			-- null_ls.builtins.diagnostics.pylint,
 			null_ls.builtins.code_actions.refactoring,
 			null_ls.builtins.formatting.black,
-			null_ls.builtins.formatting.isort,
+			-- null_ls.builtins.formatting.isort,
 			null_ls.builtins.formatting.stylua,
 			null_ls.builtins.formatting.prettier,
 			null_ls.builtins.formatting.ruff,
