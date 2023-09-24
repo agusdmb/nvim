@@ -42,11 +42,18 @@ return {
 			builtin.find_files({ hidden = true })
 		end, { desc = "find files (hidden)" })
 		vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "buffers" })
-		vim.keymap.set("n", "<leader>t", builtin.tags, { desc = "tags" })
+		-- vim.keymap.set("n", "<leader>t", builtin.tags, { desc = "tags" })
+		-- vim.keymap.set("n", "<leader>t", builtin.lsp_dynamic_workspace_symbols, { desc = "lsp document symbols" })
+		vim.keymap.set("n", "<leader>t", function()
+			builtin.lsp_dynamic_workspace_symbols({
+				require("telescope.themes").get_dropdown({ windblend = 10, previewer = true }),
+				ignore_symbols = "variable",
+			})
+		end, { desc = "lsp document symbols" })
 		vim.keymap.set("n", "gr", function()
 			builtin.lsp_references(
 				require("telescope.themes").get_dropdown({ windblend = 10, previewer = true }),
-				{ include_declaration = false , show_line = false }
+				{ include_declaration = false, show_line = false }
 			)
 		end, { desc = "lsp references" })
 		vim.keymap.set("n", "<leader>d", builtin.diagnostics, { desc = "diagnostics" })
