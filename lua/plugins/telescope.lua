@@ -37,10 +37,18 @@ return {
 
 		local builtin = require("telescope.builtin")
 
-		vim.keymap.set("n", "<c-p>", builtin.find_files, { desc = "find files" })
+		-- vim.keymap.set("n", "<c-p>", builtin.find_files, { desc = "find files" })
+		vim.keymap.set("n", "<c-p>", function()
+			builtin.find_files({ hidden = true })
+		end, { desc = "find files (hidden)" })
 		vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "buffers" })
 		vim.keymap.set("n", "<leader>t", builtin.tags, { desc = "tags" })
-		vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "references" })
+		vim.keymap.set("n", "gr", function()
+			builtin.lsp_references(
+				require("telescope.themes").get_dropdown({ windblend = 10, previewer = true }),
+				{ include_declaration = false , show_line = false }
+			)
+		end, { desc = "lsp references" })
 		vim.keymap.set("n", "<leader>d", builtin.diagnostics, { desc = "diagnostics" })
 		vim.keymap.set("n", "<leader>a", builtin.live_grep, { desc = "live grep" })
 		vim.keymap.set("n", "<leader>A", builtin.grep_string, { desc = "grep string" })
