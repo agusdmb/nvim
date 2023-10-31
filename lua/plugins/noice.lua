@@ -18,7 +18,7 @@ return {
         inc_rename = false,           -- enables an input dialog for inc-rename.nvim
         lsp_doc_border = true,        -- add a border to hover docs and signature help
       },
-      vim.keymap.set("n", "<esc>", ":Noice dismiss<cr>", { silent = true, noremap = true })
+      vim.keymap.set("n", "<esc>", ":Noice dismiss<CR>:nohl<CR>", { silent = true, noremap = true })
     })
   end,
   dependencies = {
