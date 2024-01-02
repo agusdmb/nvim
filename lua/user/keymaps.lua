@@ -71,3 +71,6 @@ keymap("n", "<leader>z", ":tab split<cr>", { desc = "Zoom in tab", noremap = tru
 -- keymap("i", "kj", "<esc>")
 
 keymap("n", "J", "J0")
+
+keymap("n", "<left>", ":cprevious<cr>", { noremap = true, silent = true })
+keymap("n", "<right>", ":cnext<cr>", { noremap = true, silent = true })
