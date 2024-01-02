@@ -68,7 +68,7 @@ return {
 	{
 		"nvim-neorg/neorg",
 		build = ":Neorg sync-parsers",
-		version = "v5.0.0",
+		version = "v7.0.0",
 		opts = {
 			load = {
 				["core.defaults"] = {}, -- Loads default behaviour
