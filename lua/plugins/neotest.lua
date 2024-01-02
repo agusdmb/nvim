@@ -128,7 +128,7 @@ return {
             target = "t",
             watch = "w"
           },
-          open = "lefta vsplit | vertical resize 50"
+          open = "lefta vsplit | vertical resize 40"
         },
         adapters = {
           require("neotest-python")({
@@ -155,12 +155,12 @@ return {
       })
       vim.keymap.set(
         "n",
-        "<leader>T",
+        "<leader>t",
         ":Neotest summary<CR>",
         { noremap = true, desc = "Neotest summary" }
       )
     end,
     cmd = { "Neotest" },
-    keys = { "<Leader>T", desc = "Neotest summary" },
+    keys = { "<Leader>t", desc = "Neotest summary" },
   },
 }

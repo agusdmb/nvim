@@ -44,7 +44,7 @@ return {
 		vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "buffers" })
 		-- vim.keymap.set("n", "<leader>t", builtin.tags, { desc = "tags" })
 		-- vim.keymap.set("n", "<leader>t", builtin.lsp_dynamic_workspace_symbols, { desc = "lsp document symbols" })
-		vim.keymap.set("n", "<leader>t", function()
+		vim.keymap.set("n", "<leader>T", function()
 			builtin.lsp_dynamic_workspace_symbols({
 				require("telescope.themes").get_dropdown({ windblend = 10, previewer = true }),
 				ignore_symbols = "variable",
@@ -82,7 +82,7 @@ return {
 	keys = {
 		"<c-p>",
 		"<leader>b",
-		"<leader>t",
+		"<leader>T",
 		"gr",
 		"<leader>d",
 		"<leader>a",
