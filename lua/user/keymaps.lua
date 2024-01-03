@@ -35,8 +35,8 @@ keymap("v", ">", ">gv", { noremap = true, silent = true })
 -- Terminal --
 -- Better terminal navigation
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", { noremap = true, silent = true })
-keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", { noremap = true, silent = true })
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", { noremap = true, silent = true })
+-- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", { noremap = true, silent = true })
+-- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", { noremap = true, silent = true })
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", { noremap = true, silent = true })
 -- keymap("t", "<esc>", "<C-\\><C-N>")
 
