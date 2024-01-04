@@ -55,7 +55,7 @@ end
 
 local function setup_mason_lspconfig()
   require("mason-lspconfig").setup({
-    ensure_installed = {},
+    ensure_installed = { "pyright", "lua_ls", "taplo" },
   })
 
   require("mason-lspconfig").setup_handlers({
@@ -158,7 +158,7 @@ end
 
 local function setup_mason_null_ls()
   require("mason-null-ls").setup({
-    ensure_installed = {},
+    ensure_installed = { "debugpy" },
     automatic_installation = false,
     handlers = {},
   })
