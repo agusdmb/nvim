@@ -158,7 +158,7 @@ end
 
 local function setup_mason_null_ls()
   require("mason-null-ls").setup({
-    ensure_installed = { "debugpy" },
+    ensure_installed = { "debugpy", "stylua" },
     automatic_installation = false,
     handlers = {},
   })

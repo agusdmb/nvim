@@ -158,6 +158,7 @@ return {
     -- require("chatgpt").setup(M.defaults())
     require("chatgpt").setup()
   end,
+  enabled = false,
   dependencies = {
     "MunifTanjim/nui.nvim",
     "nvim-lua/plenary.nvim",
