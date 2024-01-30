@@ -133,11 +133,10 @@ return {
   },
 
   {
-    "phaazon/hop.nvim",
-    version = "v2", -- optional but strongly recommended
+    "smoka7/hop.nvim",
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
-      require("hop").setup({ keys = "etovxqpdgfblzhckisuran" })
+      require("hop").setup({ keys = "jkfdlshg" })
       vim.keymap.set("n", "s", ":HopChar2MW<cr>")
     end,
     keys = { "s" },
