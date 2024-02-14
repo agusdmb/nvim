@@ -79,7 +79,7 @@ return {
           config = { engine = "nvim-cmp", name = "[Neorg]" },
         },
         ["core.concealer"] = {}, -- Adds pretty icons to your documents
-        ["core.dirman"] = {      -- Manages Neorg workspaces
+        ["core.dirman"] = {  -- Manages Neorg workspaces
           config = {
             workspaces = { notes = "~/notes" },
             default_workspace = "notes",
@@ -89,6 +89,9 @@ return {
     },
     dependencies = { "nvim-lua/plenary.nvim" },
     cmd = "Neorg",
+    keys = {
+      { "<leader>n", ":Neorg index<CR>", noremap = true, silent = true },
+    },
   },
   {
     "pwntester/octo.nvim",
