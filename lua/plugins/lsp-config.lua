@@ -85,7 +85,7 @@ local function setup_mason_lspconfig()
 				settings = {
 					python = {
 						analysis = {
-							diagnosticMode = "openFilesOnly",
+							-- diagnosticMode = "openFilesOnly",
 							-- typeCheckingMode = "strict",
 						},
 					},
