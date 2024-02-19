@@ -33,5 +33,6 @@ return {
 		config = function()
 			-- vim.g.gitblame_delay = 1000
 		end,
+		keys = { { "<leader>gt", ":GitBlameToggle<CR>", desc = "Git Virtual Blame" } },
 	},
 }
