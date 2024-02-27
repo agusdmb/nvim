@@ -92,6 +92,9 @@ local function setup_mason_lspconfig()
 				},
 			})
 		end,
+		["ruff_lsp"] = function()
+			require("lspconfig")["ruff_lsp"].setup({})
+		end,
 	})
 end
 
@@ -143,6 +146,7 @@ local function setup_null_ls()
 	local null_ls = require("null-ls")
 	null_ls.setup({
 		sources = {
+			-- null_ls.builtins.diagnostics.ruff,
 			null_ls.builtins.diagnostics.mypy.with({
 
 				-- command = "dmypy",
@@ -188,6 +192,7 @@ local function setup_null_ls()
 			null_ls.builtins.formatting.isort,
 			null_ls.builtins.formatting.stylua,
 			null_ls.builtins.formatting.prettier,
+			-- null_ls.builtins.formatting.ruff,
 		},
 	})
 end
