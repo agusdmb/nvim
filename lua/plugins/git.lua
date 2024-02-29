@@ -30,9 +30,9 @@ return {
 	{
 		"f-person/git-blame.nvim",
 		event = "VeryLazy",
-		config = function()
-			-- vim.g.gitblame_delay = 1000
-		end,
+		opts = {
+			enabled = false,
+		},
 		keys = { { "<leader>gt", ":GitBlameToggle<CR>", desc = "Git Virtual Blame" } },
 	},
 }
