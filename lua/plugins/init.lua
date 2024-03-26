@@ -103,14 +103,14 @@ return {
     config = true,
     cmd = "Octo",
   },
-  {
-    "dhruvmanila/browser-bookmarks.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim" },
-    config = function()
-      require("telescope").load_extension("bookmarks")
-    end,
-    cmd = "BrowserBookmarks",
-  },
+  -- {
+  --   "dhruvmanila/browser-bookmarks.nvim",
+  --   dependencies = { "nvim-telescope/telescope.nvim" },
+  --   config = function()
+  --     require("telescope").load_extension("bookmarks")
+  --   end,
+  --   cmd = "BrowserBookmarks",
+  -- },
 
   -- {
   -- 	dir = "/home/agusdmb/dev/gh-review/",
