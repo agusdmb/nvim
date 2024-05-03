@@ -2,7 +2,7 @@ vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 return {
 	"nvim-neo-tree/neo-tree.nvim",
-	version = "v2.x",
+	version = "v3.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
@@ -10,7 +10,9 @@ return {
 	},
 	opts = {
 		filesystem = {
-			follow_current_file = true,
+			follow_current_file = {
+				enabled = true,
+			},
 		},
 	},
 	keys = {
