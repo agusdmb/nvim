@@ -1,12 +1,12 @@
 return {
-  "hrsh7th/nvim-cmp",             -- The completion plugin
+  "hrsh7th/nvim-cmp",               -- The completion plugin
   dependencies = {
-    "hrsh7th/cmp-buffer",         -- buffer completions
-    "hrsh7th/cmp-path",           -- path completions
-    "hrsh7th/cmp-cmdline",        -- cmdline completions
-    "hrsh7th/cmp-nvim-lsp",       -- snippets
-    "L3MON4D3/LuaSnip",           -- snippet engine
-    "saadparwaiz1/cmp_luasnip",   -- snippet completions
+    "hrsh7th/cmp-buffer",           -- buffer completions
+    "hrsh7th/cmp-path",             -- path completions
+    "hrsh7th/cmp-cmdline",          -- cmdline completions
+    "hrsh7th/cmp-nvim-lsp",         -- snippets
+    "L3MON4D3/LuaSnip",             -- snippet engine
+    "saadparwaiz1/cmp_luasnip",     -- snippet completions
     "rafamadriz/friendly-snippets", -- a bunch of snippets to use
   },
   config = function()
@@ -108,6 +108,7 @@ return {
         end, { "i", "s" }),
       }),
       formatting = {
+        expandable_indicator = true,
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
           -- Kind icons
