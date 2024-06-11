@@ -145,5 +145,14 @@ return {
 		keys = { "s" },
 	},
 
-	{ "mistricky/codesnap.nvim", build = "make" },
+	{
+		"mistricky/codesnap.nvim",
+		build = "make",
+		opts = {
+			watermark = "agusdmb",
+			has_breadcrumbs = true,
+			has_line_number = true,
+      bg_color = "#535c68"
+		},
+	},
 }
