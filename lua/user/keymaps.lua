@@ -40,11 +40,11 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", { noremap = true, silent = true })
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", { noremap = true, silent = true })
 -- keymap("t", "<esc>", "<C-\\><C-N>")
 
--- agusdmb --
-keymap("n", ";", ":", { noremap = true, silent = true })
-keymap("v", ";", ":", { noremap = true, silent = true })
-keymap("n", ":", ";", { noremap = true, silent = true })
-keymap("v", ":", ";", { noremap = true, silent = true })
+-- -- agusdmb --
+-- keymap("n", ";", ":", { noremap = true, silent = true })
+-- keymap("v", ";", ":", { noremap = true, silent = true })
+-- keymap("n", ":", ";", { noremap = true, silent = true })
+-- keymap("v", ":", ";", { noremap = true, silent = true })
 
 -- Swapped this commands
 keymap("n", "`", "'", { noremap = true, silent = true })
