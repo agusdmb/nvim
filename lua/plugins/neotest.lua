@@ -31,6 +31,12 @@ return {
 					end
 				end,
 			},
+      {
+        "leoluz/nvim-dap-go",
+        config = function()
+          require("dap-go").setup()
+        end
+      }
 		},
 		config = function()
 			-- vim.keymap.set("n", "<F5>", function()
@@ -100,6 +106,7 @@ return {
 			"antoinemadec/FixCursorHold.nvim",
 			"nvim-neotest/neotest-python",
 			"nvim-neotest/neotest-go",
+      -- "fredrikaverpil/neotest-golang",
 		},
 		config = function()
 			-- vim.builtin.dap.active = true
@@ -152,6 +159,7 @@ return {
 						-- NB: This function is called a lot so don't perform any heavy tasks within it.
 					}),
 					require("neotest-go"),
+          -- require("neotest-golang"),
 				},
 			})
 			vim.keymap.set("n", "<leader>t", ":Neotest summary<CR>", { noremap = true, desc = "Neotest summary" })
