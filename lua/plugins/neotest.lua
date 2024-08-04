@@ -31,12 +31,12 @@ return {
 					end
 				end,
 			},
-      {
-        "leoluz/nvim-dap-go",
-        config = function()
-          require("dap-go").setup()
-        end
-      }
+      -- {
+      --   "leoluz/nvim-dap-go",
+      --   config = function()
+      --     require("dap-go").setup()
+      --   end
+      -- }
 		},
 		config = function()
 			-- vim.keymap.set("n", "<F5>", function()
@@ -105,7 +105,7 @@ return {
 			"nvim-treesitter/nvim-treesitter",
 			"antoinemadec/FixCursorHold.nvim",
 			"nvim-neotest/neotest-python",
-			"nvim-neotest/neotest-go",
+			-- "nvim-neotest/neotest-go",
       -- "fredrikaverpil/neotest-golang",
 		},
 		config = function()
@@ -158,7 +158,7 @@ return {
 						-- Returns if a given file path is a test file.
 						-- NB: This function is called a lot so don't perform any heavy tasks within it.
 					}),
-					require("neotest-go"),
+					-- require("neotest-go"),
           -- require("neotest-golang"),
 				},
 			})
@@ -167,4 +167,16 @@ return {
 		cmd = { "Neotest" },
 		keys = { "<Leader>t", desc = "Neotest summary" },
 	},
+  {
+    "ray-x/go.nvim",
+    dependencies = {  -- optional packages
+      "ray-x/guihua.lua",
+    },
+    config = function()
+      require("go").setup()
+    end,
+    event = {"CmdlineEnter"},
+    ft = {"go", 'gomod'},
+    build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+  }
 }
