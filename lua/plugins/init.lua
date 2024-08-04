@@ -60,6 +60,7 @@ return {
 			vim.cmd([[imap <silent><script><expr> <C-a> copilot#Accept("\CR")]])
 		end,
 		event = "InsertEnter",
+		enabled = false,
 	},
 	{
 		"simrat39/symbols-outline.nvim",
