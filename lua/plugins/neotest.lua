@@ -31,12 +31,6 @@ return {
 					end
 				end,
 			},
-      -- {
-      --   "leoluz/nvim-dap-go",
-      --   config = function()
-      --     require("dap-go").setup()
-      --   end
-      -- }
 		},
 		config = function()
 			-- vim.keymap.set("n", "<F5>", function()
@@ -105,8 +99,7 @@ return {
 			"nvim-treesitter/nvim-treesitter",
 			"antoinemadec/FixCursorHold.nvim",
 			"nvim-neotest/neotest-python",
-			-- "nvim-neotest/neotest-go",
-      -- "fredrikaverpil/neotest-golang",
+			"nvim-neotest/neotest-go",
 		},
 		config = function()
 			-- vim.builtin.dap.active = true
@@ -158,8 +151,7 @@ return {
 						-- Returns if a given file path is a test file.
 						-- NB: This function is called a lot so don't perform any heavy tasks within it.
 					}),
-					-- require("neotest-go"),
-          -- require("neotest-golang"),
+					require("neotest-go"),
 				},
 			})
 			vim.keymap.set("n", "<leader>t", ":Neotest summary<CR>", { noremap = true, desc = "Neotest summary" })

@@ -38,6 +38,7 @@
   "neorg": { "branch": "main", "commit": "ace80b05771b65d6633f3c64b8d930b5787f20d0" },
   "neoscroll.nvim": { "branch": "master", "commit": "532dcc8cea4287c4cad6bb77532989a8217cfc7b" },
   "neotest": { "branch": "master", "commit": "32ff2ac21135a372a42b38ae131e531e64833bd3" },
+  "neotest-go": { "branch": "main", "commit": "92950ad7be2ca02a41abca5c6600ff6ffaf5b5d6" },
   "neotest-python": { "branch": "master", "commit": "2e83d2bc00acbcc1fd529dbf0a0e677cabfe6b50" },
   "noice.nvim": { "branch": "main", "commit": "448bb9c524a7601035449210838e374a30153172" },
   "none-ls.nvim": { "branch": "main", "commit": "cfa65d86e21eeb60544d5e823f6db43941322a53" },
