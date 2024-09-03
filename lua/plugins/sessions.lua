@@ -41,6 +41,7 @@ return {
 	config = function()
 		require("persisted").setup({
 			use_git_branch = false,
+      autostart = false,
 			autosave = false,
 			autoload = false,
 		})
