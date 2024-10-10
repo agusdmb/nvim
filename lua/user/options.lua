@@ -47,4 +47,4 @@ vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd("set iskeyword+=-")
 vim.cmd("set formatoptions-=cro") -- TODO: this doesn't seem to work
 
-vim.g.python3_host_prog = vim.fn.expand("~/.pynvim_venv/bin/python3")
+-- vim.g.python3_host_prog = vim.fn.expand("~/.pynvim_venv/bin/python3")
