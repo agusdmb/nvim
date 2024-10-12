@@ -55,7 +55,7 @@ end
 
 local function setup_mason_lspconfig()
 	require("mason-lspconfig").setup({
-		ensure_installed = { "pyright", "lua_ls" },
+		ensure_installed = { "pyright", "lua_ls", "nil_ls" },
 	})
 
 	require("mason-lspconfig").setup_handlers({
