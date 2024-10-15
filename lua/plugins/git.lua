@@ -21,6 +21,7 @@ return {
 			"tpope/vim-rhubarb",
 		},
 		cmd = { "G", "Git", "Gdiffsplit", "Gread", "Gwrite", "Ggrep", "GMove", "GDelete", "GBrowse" },
+		keys = { { "<leader>gb", ":Git blame -C -w<CR>", desc = "Git Blame" } },
 	},
 	{
 		"rhysd/git-messenger.vim",
