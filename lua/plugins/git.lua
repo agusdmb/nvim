@@ -21,15 +21,15 @@ return {
 			"tpope/vim-rhubarb",
 		},
 		cmd = { "G", "Git", "Gdiffsplit", "Gread", "Gwrite", "Ggrep", "GMove", "GDelete", "GBrowse" },
-		keys = { { "<leader>gb", ":Git blame -C -w<CR>", desc = "Git Blame" } },
+		keys = { { "<leader>gb", ":Git blame -C -w<CR>", desc = "Git Blame", noremap = true, silent = true } },
 	},
 	{
 		"rhysd/git-messenger.vim",
 		cmd = "GitMessenger",
-    -- XXX: This config is not working
-    -- config = function()
-    --   vim.g.git_messenger_extra_blame_args = "-C -w"
-    -- end,
+		-- XXX: This config is not working
+		-- config = function()
+		--   vim.g.git_messenger_extra_blame_args = "-C -w"
+		-- end,
 		keys = { { "<leader>gm", nil, desc = "Git Messenger" } },
 	},
 	{
@@ -38,6 +38,6 @@ return {
 		opts = {
 			enabled = true,
 		},
-		keys = { { "<leader>gt", ":GitBlameToggle<CR>", desc = "Git Virtual Blame" } },
+		keys = { { "<leader>gt", ":GitBlameToggle<CR>", desc = "Git Virtual Blame", noremap = true, silent = true } },
 	},
 }
